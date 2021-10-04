@@ -1,5 +1,7 @@
 package com.OOAD;
 
+// Using all code provided by Bruce Montgomery for Project 2 to have a solid base for project 3
+
 public class Simulator {
     public void run(int days) {
         //initialize and instantiate the store for the simulation

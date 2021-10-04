@@ -2,6 +2,8 @@ package com.OOAD;
 
 import java.util.ArrayList;
 
+// Using all code provided by Bruce Montgomery for Project 2 to have a solid base for project 3
+
 public class Cashier extends Employee {
 
     public final static String STACK_BY_WIDTH = "width";

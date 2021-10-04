@@ -2,6 +2,10 @@ package com.OOAD;
 
 import java.text.NumberFormat;
 
+
+// Using all code provided by Bruce Montgomery for Project 2 to have a solid base for project 3
+
+
 public interface Utility {
 
     // making this utility function that can be used by saying Utility.rndFromRange(min,max)
