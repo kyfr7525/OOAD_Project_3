@@ -12,7 +12,8 @@ public class Main {
 
         //Call the simulator to run for that many days
         Simulator simulator = new Simulator();
-        System.out.println("Starting simulator for "+NUMBER_OF_DAYS+" days");
+//        System.out.println("Starting simulator for "+NUMBER_OF_DAYS+" days");     // original Bruce Montgomery code
+        System.out.println("Starting " + NUMBER_OF_DAYS + " day simulator");
         simulator.run(NUMBER_OF_DAYS);
     }
 }

@@ -9,14 +9,20 @@ public class Cashier extends Employee {
     public final static String STACK_BY_WIDTH = "width";
     public final static String STACK_BY_HEIGHT = "height";
 
+
+/////////////////////////////////////////////////////
+
+    // adding this:
+    public final static String BART_STACKS = "widest";
+
+
+
+///////////////////////////////////////////////////
+
+
     int damageChance; //integer percentage chance of damage for vacuuming
     String stackMethod; // how does this cashier stack games
 
-    public Cashier(String name) {
-        super(name);
-        damageChance = 0;
-        stackMethod = STACK_BY_WIDTH;
-    }
 
     public Cashier(String name, int dmgChance, String method) {
         super(name);
@@ -74,6 +80,22 @@ public class Cashier extends Employee {
             Stacker.stackByHeight(games);
             measure = ", pile height=";
         }
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+        // TODO implement using strategy
+        // For now, lets get a working stacking method for Bart
+        if (this.stackMethod.equals(BART_STACKS)) {
+            Stacker.stackByWidestWeird(games);
+            measure = ", pile height=";
+        }
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
         int i = 0;
         for (Game g:games) {
             g.shelfPosition = i;

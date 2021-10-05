@@ -22,6 +22,42 @@ public interface Stacker {
         for (Game g:games) g.shelfMeasure = g.height*g.countInventory;
         games.sort(new Sorter());
     }
+
+/////////////////////////////////////////////////////////////////////////////
+
+    // TODO: adding Bart's stacking behavior below
+
+    static void stackByWidestWeird(ArrayList<Game> games)
+    {
+        // Bart stacks by width, just like Burt; however, there's a catch--Bart will wait to
+            //stack games with an inventory count of one until all games with a greater inventory count have been
+            //stacked
+
+
+        for (Game g:games) // for each game g in games // another way of traversing the ArrayList
+        {
+            if (g.countInventory > 1) // sort all games with inventory greater than 1 first
+            {
+                g.shelfMeasure = g.height*g.countInventory;
+            }
+        }
+
+        for (Game g:games)
+        {
+            if (g.countInventory == 1) // sort the rest of the games with inventory of 1
+            {
+                g.shelfMeasure = g.height*g.countInventory;
+            }
+        }
+        games.sort(new Sorter());
+
+    }
+
+
+/////////////////////////////////////////////////////////////////////////////
+
+
+
 }
 
 class Sorter implements Comparator<Game> {
