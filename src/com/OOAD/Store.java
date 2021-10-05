@@ -14,18 +14,32 @@ public class Store {
     Cashier activeCashier;
     ArrayList<Game> brokenGames;
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    double cookieFund; // starts at $0; this is how much money is spent on Gonger's cookies
+    Baker baker = new Baker("Gonger");
+    Announcer announcer = new Announcer("Guy");
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
     public Store() {
         //initialize the cashiers
         cashiers = new ArrayList<Cashier>();
         cashiers.add(new Cashier("Burt",10,Cashier.STACK_BY_WIDTH));
         cashiers.add(new Cashier("Ernie", 5,Cashier.STACK_BY_HEIGHT));
 
-/////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //        Bart is a new cashier, so we need to add him
         cashiers.add(new Cashier("Bart", 2, Cashier.BART_STACKS));
 
 
-/////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -51,6 +65,16 @@ public class Store {
     }
 
     public void startADay(int day) {
+
+
+///////////////////////////////////////////////////////////////
+
+        // Announce Guy's arrival
+        announcer.Arrival(day);
+
+///////////////////////////////////////////////////////////////
+
+
         //pick a cashier for the day
         int n = Utility.rndFromRange(0,cashiers.size()-1);
         activeCashier = cashiers.get(n);
@@ -59,11 +83,34 @@ public class Store {
         activeCashier.arriveAtStore(day);
         activeCashier.checkForNewGames(this);
         activeCashier.countTheMoney(this);
+
+///////////////////////////////////////////////////////////////////////
+
+        baker.cookieDelivery(this);
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////
+
+
+
         activeCashier.vacuumTheStore(this);
         activeCashier.stackTheGames(games);
         activeCashier.openTheStore(this);
         activeCashier.orderNewGames(this);
         activeCashier.closeTheStore(day);
+
+
+
+///////////////////////////////////////////////////////////////
+
+        // Announce Guy's departure
+        announcer.Leave();
+
+///////////////////////////////////////////////////////////////
+
     }
 
     public void summaryReport() {

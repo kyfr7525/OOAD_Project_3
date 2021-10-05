@@ -74,21 +74,22 @@ public class Cashier extends Employee {
         String measure = "";
         if (this.stackMethod.equals(STACK_BY_WIDTH)) {
             Stacker.stackByWidth(games);
-            measure = ", game width=";
+            measure = ", game width =";
         }
         if (this.stackMethod.equals(STACK_BY_HEIGHT)) {
             Stacker.stackByHeight(games);
-            measure = ", pile height=";
+            measure = ", pile height =";
         }
 
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////
+
         // TODO implement using strategy
         // For now, lets get a working stacking method for Bart
         if (this.stackMethod.equals(BART_STACKS)) {
             Stacker.stackByWidestWeird(games);
-            measure = ", pile height=";
+            measure = ", game width =";
         }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
