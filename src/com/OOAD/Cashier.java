@@ -105,29 +105,66 @@ public class Cashier extends Employee {
         }
     }
 
-    public void openTheStore(Store store) {
-        int customerCount = Utility.rndFromRange(0,4);
-        System.out.println(name+" sees "+customerCount+" customers coming in the store!");
-        for (int c = 1; c <= customerCount ; c++) {
-            int purchaseCount = 0;
-            int chanceOfPurchase = 20;
-            for (Game g:store.games) {
-                if (purchaseCount <= 1) {   // two game purchase limit
-                    if (Utility.rndFromRange(1,100)<=chanceOfPurchase) {
-                        //buying this game if it's on the shelf
-                        if (g.countInventory > 0) {
-                            purchaseCount += 1;
-                            store.registerCash += g.price;
-                            g.countInventory -= 1;
-                            g.countSold += 1;
-                            System.out.println(name + " sold " + g.name + " to customer " + c + " for " + Utility.asDollar(g.price));
-                        }
-                    }
-                    chanceOfPurchase -= 2;
-                }
-            }
-        }
+
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+/*
+Modify the Open The Store Cashier event as follows.
+
+The number of customers arriving each day is 1 plus a random variate from a Poisson distribution with mean 3
+(this will result in random numbers from 1 to about 6 or 7 with a rare spike to 10 or so).
+
+Before each normal customer decides to buy games (as in Project 2), they may decide to buy cookies.
+If they buy cookies, they will decide to buy 1 to 3 cookies (randomly), adding the price of cookies to the Cash Register
+money and reducing the store cookie inventory.   *** you determine the percent chance of buying cookies
+
+If they buy cookies, the chance they will buy a game increases by 20%. If they want to buy,
+for instance, 3 cookies, and only 2 remain, they will buy those remaining 2.
+
+If there are no cookies for a customer to buy, the chance a customer will buy a game decreases by 10%.
+
+The working Cashier should announce any cookie sales (via Guy).
+*/
+
+
+// *** should be able to access the poisson function in Utility.java with Utility.getPoissonRandom(double mean)
+
+
+    public void openTheStore(Store store)
+    {
+        int numCustomers = Utility.getPoissonRandom(3);  // does this already factor in the range specified in the requirements?
+
     }
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+    // the following openTheStore function is the professor's original code that we decided to preserve
+
+//    public void openTheStore(Store store) {
+//        int customerCount = Utility.rndFromRange(0,4);
+//        System.out.println(name+" sees "+customerCount+" customers coming in the store!");
+//        for (int c = 1; c <= customerCount ; c++) {
+//            int purchaseCount = 0;
+//            int chanceOfPurchase = 20;
+//            for (Game g:store.games) {
+//                if (purchaseCount <= 1) {   // two game purchase limit
+//                    if (Utility.rndFromRange(1,100)<=chanceOfPurchase) {
+//                        //buying this game if it's on the shelf
+//                        if (g.countInventory > 0) {
+//                            purchaseCount += 1;
+//                            store.registerCash += g.price;
+//                            g.countInventory -= 1;
+//                            g.countSold += 1;
+//                            System.out.println(name + " sold " + g.name + " to customer " + c + " for " + Utility.asDollar(g.price));
+//                        }
+//                    }
+//                    chanceOfPurchase -= 2;
+//                }
+//            }
+//        }
+//    }
 
     public void orderNewGames(Store store) {
         double cost = 0;
