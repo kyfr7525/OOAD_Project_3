@@ -31,12 +31,12 @@ public class Announcer extends Employee
         super(name);
     }
 
-    public void Arrival(int day)
+    public void arriveAtStore(int day)
     {
         System.out.println("Guy is here first thing in the morning on day " + day + ".");
     }
 
-    public void Leave()
+    public void leaveTheStore()
     {
         System.out.println("Guy is the last to leave the store for the night.");
     }

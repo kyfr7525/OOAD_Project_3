@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 // Using all code provided by Bruce Montgomery for Project 2 to have a solid base for project 3
 
-public class Cashier extends Employee {
+public class Cashier extends ObservableEmployee {
 
 //    public final static String STACK_BY_WIDTH = "width";
 //    public final static String STACK_BY_HEIGHT = "height";
@@ -31,8 +31,8 @@ public class Cashier extends Employee {
 //    String stackMethod;
     Stacker stackMethod; // how does this cashier stack games
 
-    public Cashier(String name, int dmgChance, Stacker stack) {
-        super(name);
+    public Cashier(String name, int dmgChance, Stacker stack, Announcer a) {
+        super(name,a);
         this.damageChance = dmgChance;
         this.stackMethod = stack;
 
@@ -174,6 +174,8 @@ The logic for damaging games should be delegated and referred to by both this lo
         chanceToBuyCookies = Utility.rndFromRange(1,100); // general chance of a customer being able to buy cookies that day
 
 
+        // TODO delete for announcement
+        System.out.println("Number of customers: " + numCustomers);
 
         for (int i = 0; i < numCustomers; i++) // give *each* customer a chance of buying cookies and games
         {
@@ -220,6 +222,10 @@ The logic for damaging games should be delegated and referred to by both this lo
             // Now customers will look at the games
 
 
+// TODO delcare up top
+
+            int buyMonopolyToken;
+
 
             // CREDIT TO BRUCE MONTGOMERY:
             for (Game g:store.games)
@@ -237,6 +243,25 @@ The logic for damaging games should be delegated and referred to by both this lo
 //                            System.out.println(name + " sold " + g.name + " to customer " + c + " for " + Utility.asDollar(g.price));
 
 //                            TODO announce that a game was purchase and for how much
+
+                            if (g.name == "Monopoly")
+                            {
+                                buyMonopolyToken = Utility.rndFromRange(1,100);
+
+                                if (buyMonopolyToken <= 50)
+                                {
+                                    new MonopolyDecorator(new Monopoly("Monopoly"), "Monopoly Special Token", Utility.rndFromRange(2,5));
+                                }
+
+                            }
+
+
+
+                            // TODO finish the rest of the decorators
+
+
+
+
                         }
                     }
                 }
@@ -288,7 +313,7 @@ minimum of 1 package delivered).
 
     public void orderNewGames(Store store, Baker baker) {
 
-        // TODO announce
+        // TODO announcer
         double cost = 0;
         for (Game g:store.games) {
             if (g.countInventory == 0) {
@@ -324,6 +349,6 @@ minimum of 1 package delivered).
 
     public void closeTheStore(int day) {
         System.out.println(name + " is closing the store");
-        leaveTheStore(day);
+        leaveTheStore();
     }
 }

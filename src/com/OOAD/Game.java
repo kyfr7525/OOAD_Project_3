@@ -42,6 +42,16 @@ public class Game {
         this.countSold = another.countSold;
         this.countOrdered = another.countOrdered;
     }
+
+
+
+    public double getGamePrice()
+    {
+        return this.price;
+    }
+
+
+
 }
 
 
@@ -61,6 +71,12 @@ class KidsGame extends Game {
         price = Utility.rndFromRange(8,20);
     }
 }
+
+
+
+
+// TODO ADD IN ALL OF THE GAMES
+
 
 // Magic, Pokémon, Netrunner
 class CardGame extends Game {
@@ -83,6 +99,18 @@ class FamilyGame extends Game {
         price = Utility.rndFromRange(8,20);
     }
 }
+
+
+
+class Monopoly extends FamilyGame
+{
+    public Monopoly(String name)
+    {
+        super(name);
+    }
+}
+
+
 
 // Catan, Risk, Gloomhaven
 class BoardGame extends Game {

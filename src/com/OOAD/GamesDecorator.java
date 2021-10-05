@@ -22,27 +22,72 @@ package com.OOAD;
 public abstract class GamesDecorator extends Game
 {
     Game game;
-//    int chanceToBuyExtras;
-//    int buyHowMany;
-//    double priceForExtras;
 
-    public GamesDecorator(String name)
+    double priceForExtras;
+
+    public GamesDecorator(Game game)
     {
-        super(name);
+        super(game); // calling the constructor in game
+        this.game = game;  // the game it is wrapping
 
     }
 
-    public void buyExtras()
+    @Override
+    public double getGamePrice()
     {
+        return this.game.getGamePrice() + priceForExtras; // get the base price and add the cost of extra
+    }
+}
+
+
+class MonopolyDecorator extends GamesDecorator
+{
+
+    public MonopolyDecorator(Game game, String name, double price)
+    {
+        super(game);
+        this.game = game;
+        this.priceForExtras = price;
+        this.name = name;
 
     }
 }
 
-//class MonopolyDecorator extends GamesDecorator
-//{
-//    public MonopolyDecorator(Game game)
-//    {
-////        super(game);
-//        this.game = game;
-//    }
-//}
+class CardDecorator extends GamesDecorator
+{
+
+    public CardDecorator(Game game, String name, double price)
+    {
+        super(game);
+        this.game = game;
+        this.priceForExtras = price;
+        this.name = name;
+
+    }
+}
+
+class MousetrapDecorator extends GamesDecorator
+{
+
+    public MousetrapDecorator(Game game, String name, double price)
+    {
+        super(game);
+        this.game = game;
+        this.priceForExtras = price;
+        this.name = name;
+
+    }
+}
+
+class GloomDecorator extends GamesDecorator
+{
+
+    public GloomDecorator(Game game, String name, double price)
+    {
+        super(game);
+        this.game = game;
+        this.priceForExtras = price;
+        this.name = name;
+
+    }
+}

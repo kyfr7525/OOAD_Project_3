@@ -15,11 +15,13 @@ public class Store {
     ArrayList<Game> brokenGames;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ Announcer announcer = new Announcer("Guy");
+
 
     double cookieFund; // starts at $0; this is how much money is spent on Gonger's cookies
     int numCookiesAvailable; // number of cookie packs available to sell
-    Baker baker = new Baker("Gonger");
-    Announcer announcer = new Announcer("Guy");
+    Baker baker = new Baker("Gonger", announcer);
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -29,15 +31,15 @@ public class Store {
     public Store() {
         //initialize the cashiers
         cashiers = new ArrayList<Cashier>();
-        cashiers.add(new Cashier("Burt",10, new stackByWidth()));
-        cashiers.add(new Cashier("Ernie", 5, new stackByHeight()));
+        cashiers.add(new Cashier("Burt",10, new stackByWidth(), announcer));
+        cashiers.add(new Cashier("Ernie", 5, new stackByHeight(), announcer));
 
 
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //        Bart is a new cashier, so we need to add him
-        cashiers.add(new Cashier("Bart", 2, new stackByWidestWeird()));
+        cashiers.add(new Cashier("Bart", 2, new stackByWidestWeird(), announcer));
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -63,6 +65,7 @@ public class Store {
 
         //initialize a place for broken games
         brokenGames = new ArrayList<Game>();
+
     }
 
     public void startADay(int day) {
@@ -71,7 +74,7 @@ public class Store {
 /////////////////////////////////////////////////////////////// v
 
         // Announce Guy's arrival
-        announcer.Arrival(day);
+        announcer.arriveAtStore(day);
 
 /////////////////////////////////////////////////////////////// ^
 
@@ -108,7 +111,7 @@ public class Store {
 /////////////////////////////////////////////////////////////// v
 
         // Announce Guy's departure
-        announcer.Leave();
+        announcer.leaveTheStore();
 
 /////////////////////////////////////////////////////////////// ^
 

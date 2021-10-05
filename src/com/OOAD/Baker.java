@@ -23,14 +23,14 @@ Gonger is an observable publisher, and will issue events for his arrival, the co
 dropped off, the money he receives, and his departure (which Guy will announce).
 
 */
-public class Baker extends Employee
+public class Baker extends ObservableEmployee
 {
     int numPacksOfCookies = 1;
     double cookiePrice = Utility.rndFromRange(5,15); // determine rand price to sell a pack of cookies to customers between $5 and $15
 
-    public Baker(String name)
+    public Baker(String name, Announcer a)
     {
-        super(name);
+        super(name, a);
     }
 
 
