@@ -9,31 +9,50 @@ import java.util.Comparator;
 // Array sorting approach from:
 // https://howtodoinjava.com/java/collections/arraylist/arraylist-sort-objects-by-field/
 
-public interface Stacker {
+public interface Stacker
+{
 
-    static void stackByWidth(ArrayList<Game> games) {
+    public void Stack(ArrayList<Game> games);
+
+}
+
+
+class stackByWidth implements Stacker
+{
+
+    public void Stack(ArrayList<Game> games)
+    {
         // Width is of a single game
         for (Game g:games) g.shelfMeasure = g.width;
         games.sort(new Sorter());
     }
+}
 
-    static void stackByHeight(ArrayList<Game> games) {
+
+
+class stackByHeight implements Stacker
+{
+    public void Stack(ArrayList<Game> games)
+    {
         // Height source is the whole stack of games
         for (Game g:games) g.shelfMeasure = g.height*g.countInventory;
         games.sort(new Sorter());
     }
 
+}
+
 /////////////////////////////////////////////////////////////////////////////
 
-    // TODO: adding Bart's stacking behavior below
+// TODO: adding Bart's stacking behavior below
 
-    static void stackByWidestWeird(ArrayList<Game> games)
+class stackByWidestWeird implements Stacker
+{
+    // Bart stacks by width, just like Burt; however, there's a catch--Bart will wait to
+    //stack games with an inventory count of one until all games with a greater inventory count have been
+    //stacked
+
+    public void Stack(ArrayList<Game> games)
     {
-        // Bart stacks by width, just like Burt; however, there's a catch--Bart will wait to
-            //stack games with an inventory count of one until all games with a greater inventory count have been
-            //stacked
-
-
         for (Game g:games) // for each game g in games // another way of traversing the ArrayList
         {
             if (g.countInventory > 1) // sort all games with inventory greater than 1 first
@@ -54,11 +73,12 @@ public interface Stacker {
     }
 
 
-/////////////////////////////////////////////////////////////////////////////
-
-
-
 }
+
+
+
+
+
 
 class Sorter implements Comparator<Game> {
     @Override

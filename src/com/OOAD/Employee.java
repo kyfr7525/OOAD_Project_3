@@ -9,7 +9,7 @@ public abstract class Employee {
     }
     public void arriveAtStore(int day) {
         System.out.println(name+" has arrived on day "+day);
-    }
+    }  // TODO call to announcer
     public void leaveTheStore(int day) {
         System.out.println(name+" has left on day "+day);
     }

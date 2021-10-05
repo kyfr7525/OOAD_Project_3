@@ -29,15 +29,15 @@ public class Store {
     public Store() {
         //initialize the cashiers
         cashiers = new ArrayList<Cashier>();
-        cashiers.add(new Cashier("Burt",10,Cashier.STACK_BY_WIDTH));
-        cashiers.add(new Cashier("Ernie", 5,Cashier.STACK_BY_HEIGHT));
+        cashiers.add(new Cashier("Burt",10, new stackByWidth()));
+        cashiers.add(new Cashier("Ernie", 5, new stackByHeight()));
 
 
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //        Bart is a new cashier, so we need to add him
-        cashiers.add(new Cashier("Bart", 2, Cashier.BART_STACKS));
+        cashiers.add(new Cashier("Bart", 2, new stackByWidestWeird()));
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////

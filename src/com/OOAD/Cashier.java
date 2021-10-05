@@ -6,14 +6,14 @@ import java.util.ArrayList;
 
 public class Cashier extends Employee {
 
-    public final static String STACK_BY_WIDTH = "width";
-    public final static String STACK_BY_HEIGHT = "height";
+//    public final static String STACK_BY_WIDTH = "width";
+//    public final static String STACK_BY_HEIGHT = "height";
 
 
 ///////////////////////////////////////////////////// v
 
     // adding this:
-    public final static String BART_STACKS = "widest";
+//    public final static String BART_STACKS = "widest";
 
     int numCustomers;
     int numCookiesToBuy; // number of cookies a customer wants to buy
@@ -28,13 +28,14 @@ public class Cashier extends Employee {
 
 
     int damageChance; //integer percentage chance of damage for vacuuming
-    String stackMethod; // how does this cashier stack games
+//    String stackMethod;
+    Stacker stackMethod; // how does this cashier stack games
 
-
-    public Cashier(String name, int dmgChance, String method) {
+    public Cashier(String name, int dmgChance, Stacker stack) {
         super(name);
-        damageChance = dmgChance;
-        stackMethod = method;
+        this.damageChance = dmgChance;
+        this.stackMethod = stack;
+
     }
 
     public void checkForNewGames(Store store) {
@@ -74,42 +75,48 @@ public class Cashier extends Employee {
 
     public void stackTheGames(ArrayList<Game> games) {
 
-        // TODO: This really should be done with Strategy
+        // Strategy is implemented
+
+
+
         // I should assign a method to the Cashier when I initialize it
         // and avoid this if statement block
 
-        String measure = "";
-        if (this.stackMethod.equals(STACK_BY_WIDTH)) {
-            Stacker.stackByWidth(games);
-            measure = ", game width =";
-        }
-        if (this.stackMethod.equals(STACK_BY_HEIGHT)) {
-            Stacker.stackByHeight(games);
-            measure = ", pile height =";
-        }
+//        String measure = "";
+//        if (this.stackMethod.equals(STACK_BY_WIDTH)) {
+//            Stacker.stackByWidth(games);
+//            measure = ", game width =";
+//        }
+//        if (this.stackMethod.equals(STACK_BY_HEIGHT)) {
+//            Stacker.stackByHeight(games);
+//            measure = ", pile height =";
+//        }
+//
+//
+//
+/////////////////////////////////////////////////////////////////////////////////////////////// v
+//
+//        // For now, lets get a working stacking method for Bart
+//        if (this.stackMethod.equals(BART_STACKS)) {
+//            Stacker.stackByWidestWeird(games);
+//            measure = ", game width =";
+//        }
+//
+///////////////////////////////////////////////////////////////////////////////////////////// ^
+//
+//
+//
+//
+//        int i = 0;
+//        for (Game g:games) {
+//            g.shelfPosition = i;
+//            System.out.println(name+" stacked "+g.name+" on shelf "+g.shelfPosition+measure+g.shelfMeasure);
+//            i += 1;
+//        }
+
+        this.stackMethod.Stack(games);
 
 
-
-///////////////////////////////////////////////////////////////////////////////////////////// v
-
-        // TODO implement using strategy
-        // For now, lets get a working stacking method for Bart
-        if (this.stackMethod.equals(BART_STACKS)) {
-            Stacker.stackByWidestWeird(games);
-            measure = ", game width =";
-        }
-
-/////////////////////////////////////////////////////////////////////////////////////////// ^
-
-
-
-
-        int i = 0;
-        for (Game g:games) {
-            g.shelfPosition = i;
-            System.out.println(name+" stacked "+g.name+" on shelf "+g.shelfPosition+measure+g.shelfMeasure);
-            i += 1;
-        }
     }
 
 
@@ -280,6 +287,8 @@ minimum of 1 package delivered).
 */
 
     public void orderNewGames(Store store, Baker baker) {
+
+        // TODO announce
         double cost = 0;
         for (Game g:store.games) {
             if (g.countInventory == 0) {
