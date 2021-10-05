@@ -198,8 +198,10 @@ The working Cashier should announce any cookie sales (via Guy).
 
 
             // CREDIT TO BRUCE MONTGOMERY:
-            for (Game g:store.games) {
-                if (gamesPurchased <= 1) {   // two game purchase limit
+            for (Game g:store.games)
+            {
+                if (gamesPurchased <= 1)
+                {   // two game purchase limit
                     if (Utility.rndFromRange(1,100) <= chanceToBuyGame)
                     {
                         //buying this game if it's on the shelf
@@ -211,11 +213,12 @@ The working Cashier should announce any cookie sales (via Guy).
 //                            System.out.println(name + " sold " + g.name + " to customer " + c + " for " + Utility.asDollar(g.price));
 
 //                            TODO announce that a game was purchase and for how much
-
                         }
                     }
-                    chanceToBuyGame -= 2;
                 }
+
+                    chanceToBuyGame -= 2;
+            }
         }
     }
 
