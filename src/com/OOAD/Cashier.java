@@ -141,22 +141,21 @@ The working Cashier should announce any cookie sales (via Guy).
 
 
 
-6) When a customer visits, there is a 1% chance that the customer is the Cookie Monster in disguise. If
-there are any cookies in the store, the Cookie Monster will eat all the cookies in the store without
-paying for them and damage 1 to 6 games (randomly). If there are no cookies in the store, the Cookie
-Monster will sadly leave the store, taking no action. The working Cashier should announce any Cookie
-Monster events (via Guy). The logic for damaging games should be delegated and referred to by both
-this logic and the logic for Vacuum the Store.
+6) When a customer visits, there is a 1% chance that the customer is the Cookie Monster in disguise.
+
+If there are any cookies in the store, the Cookie Monster will eat all the cookies in the store without
+paying for them and damage 1 to 6 games (randomly).
+
+If there are no cookies in the store, the Cookie Monster will sadly leave the store, taking no action.
+
+The working Cashier should announce any Cookie Monster events (via Guy).
+
+The logic for damaging games should be delegated and referred to by both this logic and the logic for Vacuum the Store.
 
 */
 
 
 // *** should be able to access the poisson function in Utility.java with Utility.getPoissonRandom(double mean)
-
-
-
-
-
 
 
 
@@ -268,7 +267,19 @@ this logic and the logic for Vacuum the Store.
 //        }
 //    }
 
-    public void orderNewGames(Store store) {
+
+
+
+/*
+
+7) Modify the Order New Games Cashier event as follows. If there are no cookies in the store at the end of
+a day, increase the number of cookie packages Gonger delivers the next day by 1. If there are cookies in
+the store at the end of the day, have Gonger deliver 1 less package of cookies the next day (with a
+minimum of 1 package delivered).
+
+*/
+
+    public void orderNewGames(Store store, Baker baker) {
         double cost = 0;
         for (Game g:store.games) {
             if (g.countInventory == 0) {
@@ -282,6 +293,24 @@ this logic and the logic for Vacuum the Store.
             System.out.println(name+" ordered new games for "+Utility.asDollar(cost));
         }
         else System.out.println(name + " did not order any games");
+
+/////////////////////////////////////////////////////////////////// v
+        if (store.numCookiesAvailable == 0)
+        {
+            baker.numPacksOfCookies += 1; // Gonger needs to increase the number of cookie packages that need to be delivered
+        }
+
+        else // there are cookies available
+        {
+            if (baker.numPacksOfCookies > 1) // if Gonger normally drops off more than one pack of cookies
+            {
+                baker.numPacksOfCookies -= 1;
+            }
+        }
+
+
+/////////////////////////////////////////////////////////////////// ^
+
     }
 
     public void closeTheStore(int day) {
