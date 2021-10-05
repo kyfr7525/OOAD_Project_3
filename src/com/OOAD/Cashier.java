@@ -118,7 +118,7 @@ public class Cashier extends Employee {
 ////////////////////////////////////////////////////////////////////////////////// v
 
 /*
-Modify the Open The Store Cashier event as follows.
+5) Modify the Open The Store Cashier event as follows.
 
 The number of customers arriving each day is 1 plus a random variate from a Poisson distribution with mean 3
 (this will result in random numbers from 1 to about 6 or 7 with a rare spike to 10 or so).
@@ -133,10 +133,28 @@ for instance, 3 cookies, and only 2 remain, they will buy those remaining 2.
 If there are no cookies for a customer to buy, the chance a customer will buy a game decreases by 10%.
 
 The working Cashier should announce any cookie sales (via Guy).
+
+
+
+
+
+
+
+
+6) When a customer visits, there is a 1% chance that the customer is the Cookie Monster in disguise. If
+there are any cookies in the store, the Cookie Monster will eat all the cookies in the store without
+paying for them and damage 1 to 6 games (randomly). If there are no cookies in the store, the Cookie
+Monster will sadly leave the store, taking no action. The working Cashier should announce any Cookie
+Monster events (via Guy). The logic for damaging games should be delegated and referred to by both
+this logic and the logic for Vacuum the Store.
+
 */
 
 
 // *** should be able to access the poisson function in Utility.java with Utility.getPoissonRandom(double mean)
+
+
+
 
 
 
