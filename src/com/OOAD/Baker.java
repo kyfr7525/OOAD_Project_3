@@ -42,5 +42,6 @@ public class Baker extends Employee
         // note: store.registerCash will control the amount of money in the register
         // pay Gonger for his cookies
         store.registerCash -= (numPacksOfCookies * (cookiePrice /2));
+        store.numCookiesAvailable += numPacksOfCookies;
     }
 }

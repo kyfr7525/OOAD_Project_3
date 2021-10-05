@@ -10,14 +10,21 @@ public class Cashier extends Employee {
     public final static String STACK_BY_HEIGHT = "height";
 
 
-/////////////////////////////////////////////////////
+///////////////////////////////////////////////////// v
 
     // adding this:
     public final static String BART_STACKS = "widest";
 
+    int numCustomers;
+    int numCookies; // number of cookies a customer wants to buy
+    int chanceToBuyCookies; // chance that cookies can be bought by customer
+    int customerGeneralChanceCookies; // chance of customers ACTUALLY buying cookies
+    int gamesPurchased;
+    int chanceToBuyGame;
 
 
-///////////////////////////////////////////////////
+
+/////////////////////////////////////////////////// ^
 
 
     int damageChance; //integer percentage chance of damage for vacuuming
@@ -83,7 +90,7 @@ public class Cashier extends Employee {
 
 
 
-/////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////// v
 
         // TODO implement using strategy
         // For now, lets get a working stacking method for Bart
@@ -92,7 +99,7 @@ public class Cashier extends Employee {
             measure = ", game width =";
         }
 
-///////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////// ^
 
 
 
@@ -108,7 +115,7 @@ public class Cashier extends Employee {
 
 
 
-//////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////// v
 
 /*
 Modify the Open The Store Cashier event as follows.
@@ -132,13 +139,32 @@ The working Cashier should announce any cookie sales (via Guy).
 // *** should be able to access the poisson function in Utility.java with Utility.getPoissonRandom(double mean)
 
 
+
+
+
     public void openTheStore(Store store)
     {
-        int numCustomers = Utility.getPoissonRandom(3);  // does this already factor in the range specified in the requirements?
+        numCustomers = Utility.getPoissonRandom(3);  // does this already factor in the range specified in the requirements?
+        chanceToBuyCookies = Utility.rndFromRange(1,100); // general chance of a customer being able to buy cookies that day
+
+        // NEED TO ANNOUNCE CUSTOMER COUNT AND COOKIE SALES
+
+        for (int i = 0; i < numCustomers; i++) // give *each* customer a chance of buying cookies
+        {
+            numCookies = Utility.rndFromRange(1,3); // number of cookies a customer wants to buy
+            customerGeneralChanceCookies = Utility.rndFromRange(10,50); // the chance a customer ACTUALLY wants to buy cookies
+
+            if (customerGeneralChanceCookies <= chanceToBuyCookies && store.numCookiesAvailable > 0) // if the chance to want to buy is <= to the chance of buying cookies
+            {
+                // buy some cookies
+            }
+        }
+
+
 
     }
 
-/////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////// ^
 
     // the following openTheStore function is the professor's original code that we decided to preserve
 
