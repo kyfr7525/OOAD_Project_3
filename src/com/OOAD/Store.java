@@ -99,7 +99,7 @@ public class Store {
 
         activeCashier.vacuumTheStore(this);
         activeCashier.stackTheGames(games);
-        activeCashier.openTheStore(this);
+        activeCashier.openTheStore(this, baker);    // adding baker as a parameter
         activeCashier.orderNewGames(this);
         activeCashier.closeTheStore(day);
 

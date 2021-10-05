@@ -26,7 +26,7 @@ dropped off, the money he receives, and his departure (which Guy will announce).
 public class Baker extends Employee
 {
     int numPacksOfCookies;
-    double cookiePrice = Utility.rndFromRange(5,10); // determine rand price to sell a pack of cookies to customers between $5 and $10
+    double cookiePrice = Utility.rndFromRange(5,15); // determine rand price to sell a pack of cookies to customers between $5 and $15
 
     public Baker(String name)
     {

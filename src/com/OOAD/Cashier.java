@@ -16,7 +16,7 @@ public class Cashier extends Employee {
     public final static String BART_STACKS = "widest";
 
     int numCustomers;
-    int numCookies; // number of cookies a customer wants to buy
+    int numCookiesToBuy; // number of cookies a customer wants to buy
     int chanceToBuyCookies; // chance that cookies can be bought by customer
     int customerGeneralChanceCookies; // chance of customers ACTUALLY buying cookies
     int gamesPurchased;
@@ -142,26 +142,81 @@ The working Cashier should announce any cookie sales (via Guy).
 
 
 
-    public void openTheStore(Store store)
+    public void openTheStore(Store store, Baker baker) // need baker as a parameter to be able to access baker methods
     {
         numCustomers = Utility.getPoissonRandom(3);  // does this already factor in the range specified in the requirements?
+        // TODO NEED TO ANNOUNCE CUSTOMER COUNT
+
         chanceToBuyCookies = Utility.rndFromRange(1,100); // general chance of a customer being able to buy cookies that day
 
-        // NEED TO ANNOUNCE CUSTOMER COUNT AND COOKIE SALES
 
-        for (int i = 0; i < numCustomers; i++) // give *each* customer a chance of buying cookies
+
+        for (int i = 0; i < numCustomers; i++) // give *each* customer a chance of buying cookies and games
         {
-            numCookies = Utility.rndFromRange(1,3); // number of cookies a customer wants to buy
+            chanceToBuyGame = 20; // every normal customer always starts off with a 20% chance to buy a game
+            gamesPurchased = 0;
+            numCookiesToBuy = Utility.rndFromRange(1,3); // number of cookies a customer wants to buy
             customerGeneralChanceCookies = Utility.rndFromRange(10,50); // the chance a customer ACTUALLY wants to buy cookies
 
-            if (customerGeneralChanceCookies <= chanceToBuyCookies && store.numCookiesAvailable > 0) // if the chance to want to buy is <= to the chance of buying cookies
+            if (store.numCookiesAvailable == 0) // regardless if they want to buy or not, they're upset they don't have the option
             {
-                // buy some cookies
+                // there are no cookies for the customer to buy, which makes them angry; -10% chance of buying a game
+                // TODO ANNOUNCE that there are no cookies for customers to buy
+
+                chanceToBuyGame -= 10;
             }
+
+                // if the chance to want to buy is <= to the chance of buying cookies AND there are cookies available
+            else if (customerGeneralChanceCookies <= chanceToBuyCookies && store.numCookiesAvailable > 0)
+            {
+                // buy some cookies! customers are 20% more likely to buy a game
+
+
+                if (numCookiesToBuy > store.numCookiesAvailable)
+                {
+                    numCookiesToBuy = store.numCookiesAvailable; // chance the num cookies that the customer wants to buy to what's left in store
+                    store.numCookiesAvailable = 0;
+                    // TODO announce that the customer took the last of the cookies
+                }
+
+                else
+                {
+                    store.numCookiesAvailable -= numCookiesToBuy;
+                }
+
+                store.registerCash += (baker.cookiePrice * numCookiesToBuy);   // money made from cookie sales
+                // TODO announce the number of cookie packs sold and the money made from cookie sales
+
+                chanceToBuyGame += 20;
+
+            }
+
+
+
+            // Now customers will look at the games
+
+
+
+            // CREDIT TO BRUCE MONTGOMERY:
+            for (Game g:store.games) {
+                if (gamesPurchased <= 1) {   // two game purchase limit
+                    if (Utility.rndFromRange(1,100) <= chanceToBuyGame)
+                    {
+                        //buying this game if it's on the shelf
+                        if (g.countInventory > 0) {
+                            gamesPurchased += 1;
+                            store.registerCash += g.price;
+                            g.countInventory -= 1;
+                            g.countSold += 1;
+//                            System.out.println(name + " sold " + g.name + " to customer " + c + " for " + Utility.asDollar(g.price));
+
+//                            TODO announce that a game was purchase and for how much
+
+                        }
+                    }
+                    chanceToBuyGame -= 2;
+                }
         }
-
-
-
     }
 
 ///////////////////////////////////////////////////////////////////////////////////// ^
