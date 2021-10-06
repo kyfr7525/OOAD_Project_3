@@ -71,13 +71,9 @@ public class Store {
     public void startADay(int day) {
 
 
-/////////////////////////////////////////////////////////////// v
-
         // Announce Guy's arrival
         announcer.arriveAtStore(day);
-
-/////////////////////////////////////////////////////////////// ^
-
+        announcer.makeAnnouncement("");
 
         //pick a cashier for the day
         int n = Utility.rndFromRange(0,cashiers.size()-1);
@@ -85,25 +81,24 @@ public class Store {
 
         //have the cashier do their things
         activeCashier.arriveAtStore(day);
+        announcer.makeAnnouncement("");
         activeCashier.checkForNewGames(this);
+//        announcer.makeAnnouncement("");
         activeCashier.countTheMoney(this);
+        announcer.makeAnnouncement("");
 
-/////////////////////////////////////////////////////////////////////// v
 
         baker.cookieDelivery(this);
 
-
-
-
-
-/////////////////////////////////////////////////////////////////////// ^
-
-
-
+        announcer.makeAnnouncement("");
         activeCashier.vacuumTheStore(this);
+        announcer.makeAnnouncement("");
         activeCashier.stackTheGames(games);
+//        announcer.makeAnnouncement("");
         activeCashier.openTheStore(this, baker);    // adding baker as a parameter
+        announcer.makeAnnouncement("");
         activeCashier.orderNewGames(this, baker);
+        announcer.makeAnnouncement("");
         activeCashier.closeTheStore(day);
 
 
@@ -119,25 +114,25 @@ public class Store {
 
     public void summaryReport() {
         // per game type number in inventory, number sold, total sales
-        System.out.println("===Store Summary Report===");
-        System.out.println("Game sales:");
-        System.out.println("Game\tInventory\tSold\tTotal $");
+        announcer.makeAnnouncement("------------------------------------------------------------------------------------------------\n===Store Summary Report===");
+        announcer.makeAnnouncement("Game sales:");
+//        announcer.makeAnnouncement("Game\t\tInventory\t\tSold\t\tTotal $");
         for (Game g:games) {
-            System.out.println(g.name+"\t"+g.countInventory+"\t"+g.countSold+"\t"+Utility.asDollar(g.countSold*g.price));
+            announcer.makeAnnouncement("Game: " + g.name + "\t\t Inventory: " + g.countInventory + "\t\t Sold: " + g.countSold + "\t\t Total Sales: " + Utility.asDollar(g.countSold*g.price));
         }
         // what's in damaged games
-        System.out.println("Broken games:");
-        if (brokenGames.size()==0) System.out.println("No games broken.");
+        announcer.makeAnnouncement("Broken games:");
+        if (brokenGames.size()==0) announcer.makeAnnouncement("No games broken.");
         else {
-            System.out.println("Game\tCount");
+//            announcer.makeAnnouncement("Game\t\tCount");
             for (Game g : brokenGames) {
-                System.out.println(g.name+"\t"+g.countInventory);
+                announcer.makeAnnouncement("Game: " + g.name+"\t\t Inventory: "+g.countInventory);
             }
         }
         // final register count
-        System.out.println("Final register funds: "+Utility.asDollar(registerCash));
+        announcer.makeAnnouncement("Final register funds: "+Utility.asDollar(registerCash));
         // additions to register
-        System.out.println("$ added to register: "+Utility.asDollar(registerAdds*1000)+" ("+registerAdds+" adds)");
+        announcer.makeAnnouncement("Number of times money was added to register: "+Utility.asDollar(registerAdds*1000)+" ("+registerAdds+" adds)");
     }
 
     public void breakARandomGame() {

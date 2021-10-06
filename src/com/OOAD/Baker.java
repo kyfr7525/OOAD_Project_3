@@ -48,7 +48,7 @@ public class Baker extends ObservableEmployee
 
         announcer.makeAnnouncement("Gonger is here to deliver cookies.");
         announcer.makeAnnouncement("Gonger is dropping off " + numPacksOfCookies + " packages of cookies.");
-        announcer.makeAnnouncement("Gonger receives $" + Utility.asDollar(numPacksOfCookies * (cookiePrice /2))+ " for his cookies.");
+        announcer.makeAnnouncement("Gonger receives " + Utility.asDollar(numPacksOfCookies * (cookiePrice /2))+ " for his cookies.");
         announcer.makeAnnouncement("Gonger leaves for the day.");
     }
 }

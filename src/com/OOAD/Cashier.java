@@ -37,7 +37,8 @@ public class Cashier extends ObservableEmployee {
 //    String stackMethod;
     Stacker stackMethod; // how does this cashier stack games
 
-    public Cashier(String name, int dmgChance, Stacker stack, Announcer a) {
+    public Cashier(String name, int dmgChance, Stacker stack, Announcer a)
+    {
         super(name,a);
         this.damageChance = dmgChance;
         this.stackMethod = stack;
@@ -56,26 +57,26 @@ public class Cashier extends ObservableEmployee {
 
     public void countTheMoney(Store store) {
         //say what the starting cash is
-        System.out.println(name+" counts the money.");
-        System.out.println(name+" sees "+Utility.asDollar(store.registerCash)+" in the register");
+        announcer.makeAnnouncement(name+" counts the money.");
+        announcer.makeAnnouncement(name+" sees "+Utility.asDollar(store.registerCash)+" in the register");
 
         // if the money is less than 100, add 1000
         if (store.registerCash < 100) {
             store.registerCash += 1000;
             store.registerAdds += 1;
-            System.out.println(name+" added $1000 to the register, now at $"+store.registerCash);
+            announcer.makeAnnouncement(name+" added $1000 to the register, now at $"+store.registerCash);
         }
     }
 
     public void vacuumTheStore(Store store) {
-        System.out.println(name+" vacuums the store");
+        announcer.makeAnnouncement(name+" vacuums the store");
         int damageCheck = Utility.rndFromRange(1,100);
         if (damageCheck<=damageChance) {
-            System.out.println(name+" broke a game!");
+            announcer.makeAnnouncement(name+" broke a game!");
             store.breakARandomGame();
         }
         else {
-            System.out.println(name+" did not break a game!");
+            announcer.makeAnnouncement(name+" did not break a game!");
         }
     }
 
@@ -175,13 +176,11 @@ The logic for damaging games should be delegated and referred to by both this lo
     public void openTheStore(Store store, Baker baker) // need baker as a parameter to be able to access baker methods
     {
         numCustomers = Utility.getPoissonRandom(3);  // does this already factor in the range specified in the requirements?
-        // TODO NEED TO ANNOUNCE CUSTOMER COUNT
 
         chanceToBuyCookies = Utility.rndFromRange(1,100); // general chance of a customer being able to buy cookies that day
 
 
-        // TODO delete for announcement
-        System.out.println("Number of customers: " + numCustomers);
+        announcer.makeAnnouncement(numCustomers + " customers have arrived at the store.");
 
         for (int i = 1; i < numCustomers + 1; i++) // give *each* customer a chance of buying cookies and games
         {
@@ -193,7 +192,8 @@ The logic for damaging games should be delegated and referred to by both this lo
             if (store.numCookiesAvailable == 0) // regardless if they want to buy or not, they're upset they don't have the option
             {
                 // there are no cookies for the customer to buy, which makes them angry; -10% chance of buying a game
-                // TODO ANNOUNCE that there are no cookies for customers to buy
+
+                announcer.makeAnnouncement("Sadly, there are no cookies available for customers to buy.");
 
                 chanceToBuyGame -= 10;
             }
@@ -207,8 +207,10 @@ The logic for damaging games should be delegated and referred to by both this lo
                 if (numCookiesToBuy > store.numCookiesAvailable)
                 {
                     numCookiesToBuy = store.numCookiesAvailable; // chance the num cookies that the customer wants to buy to what's left in store
+                    announcer.makeAnnouncement("Customer " + i + " took the last " + store.numCookiesAvailable + " package(s) of cookies.");
+
                     store.numCookiesAvailable = 0;
-                    // TODO announce that the customer took the last of the cookies
+
                 }
 
                 else
@@ -217,7 +219,8 @@ The logic for damaging games should be delegated and referred to by both this lo
                 }
 
                 store.registerCash += (baker.cookiePrice * numCookiesToBuy);   // money made from cookie sales
-                // TODO announce the number of cookie packs sold and the money made from cookie sales
+
+                announcer.makeAnnouncement("Customer " + i + " bought " + numCookiesToBuy + " package(s) of cookies for a total of " + Utility.asDollar(baker.cookiePrice * numCookiesToBuy) + ".");
 
                 chanceToBuyGame += 20;
 
@@ -267,6 +270,9 @@ The logic for damaging games should be delegated and referred to by both this lo
                                 {
                                     new MonopolyDecorator(new Monopoly("Monopoly"), "Monopoly Special Token", Utility.rndFromRange(2,5), 1);
                                     announcer.makeAnnouncement("Customer " + i + " also decided to purchase a special token for Monopoly!");
+
+                                    // announcer.makeAnnouncement("Customer " + i + " also decided to purchase a special token for Monopoly for a total of " + MonopolyDecorator.getGamePrice());
+
                                 }
 
                             }
@@ -363,22 +369,21 @@ minimum of 1 package delivered).
 
 */
 
-    public void orderNewGames(Store store, Baker baker) {
-
-        // TODO announcer
+    public void orderNewGames(Store store, Baker baker)
+    {
         double cost = 0;
         for (Game g:store.games) {
             if (g.countInventory == 0) {
                 g.countOrdered = 3; // always order 3
                 cost += g.countOrdered * g.price / 2; //pay for the order
-                System.out.println(name+" ordering new copies of "+g.name);
+                announcer.makeAnnouncement(name+" ordering new copies of "+g.name);
             }
         }
         if (cost != 0) {
             store.registerCash -= cost;
-            System.out.println(name+" ordered new games for "+Utility.asDollar(cost));
+            announcer.makeAnnouncement(name+" ordered new games for "+Utility.asDollar(cost));
         }
-        else System.out.println(name + " did not order any games");
+        else announcer.makeAnnouncement(name + " did not order any games");
 
 /////////////////////////////////////////////////////////////////// v
         if (store.numCookiesAvailable == 0)
@@ -388,7 +393,7 @@ minimum of 1 package delivered).
 
         else // there are cookies available
         {
-            if (baker.numPacksOfCookies > 1) // if Gonger normally drops off more than one pack of cookies
+            if (baker.numPacksOfCookies > 1) // if Gonger normally drops off more than one pack of cookies, and there are still cookies available by the end of the day, then he needs to deliver 1 less pack the next day
             {
                 baker.numPacksOfCookies -= 1;
             }
@@ -400,7 +405,7 @@ minimum of 1 package delivered).
     }
 
     public void closeTheStore(int day) {
-        System.out.println(name + " is closing the store");
+        announcer.makeAnnouncement(name + " is closing the store");
         leaveTheStore();
     }
 }
