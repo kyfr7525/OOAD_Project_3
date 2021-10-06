@@ -14,6 +14,10 @@ public class Game {
     int countSold; //how many sold?
     int countOrdered; // for ordering new games transactions
 
+    // adding genre to help with decorators in Cashier
+    String genre;
+
+
     public Game(String name) {
         this.name = name;
         price = 1.0;
@@ -56,7 +60,7 @@ public class Game {
 
 
 
-
+/////////////////////////////////////////////////////////////////////////////////////////////////
 
 // I'm using the subclasses to make different sizes and prices for types of games
 // The board games are bigger and pricy, etc.
@@ -69,13 +73,37 @@ class KidsGame extends Game {
         width = Utility.rndFromRange(6,12);
         length = Utility.rndFromRange(12,24);
         price = Utility.rndFromRange(8,20);
+        genre = "Kids";
     }
 }
 
 
+class Mousetrap extends KidsGame
+{
+    public Mousetrap(String name)
+    {
+        super(name);
+    }
+}
 
+class Candyland extends KidsGame
+{
+    public Candyland(String name)
+    {
+        super(name);
+    }
+}
 
-// TODO ADD IN ALL OF THE GAMES
+class ConnectFour extends KidsGame
+{
+    public ConnectFour(String name)
+    {
+        super(name);
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 
 // Magic, Pokémon, Netrunner
@@ -86,9 +114,40 @@ class CardGame extends Game {
         width = Utility.rndFromRange(4,6);
         length = Utility.rndFromRange(4,12);
         price = Utility.rndFromRange(20,40);
+        genre = "Card";
     }
 }
 
+
+class Magic extends CardGame
+{
+    public Magic(String name)
+    {
+        super(name);
+    }
+}
+
+
+class Pokemon extends CardGame
+{
+    public Pokemon(String name)
+    {
+        super(name);
+    }
+}
+
+
+class Netrunner extends CardGame
+{
+    public Netrunner(String name)
+    {
+        super(name);
+    }
+}
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
 // Monopoly, Clue, Life
 class FamilyGame extends Game {
     public FamilyGame(String name) {
@@ -97,6 +156,8 @@ class FamilyGame extends Game {
         width = Utility.rndFromRange(6,12);
         length = Utility.rndFromRange(12,24);
         price = Utility.rndFromRange(8,20);
+
+        genre = "Family";
     }
 }
 
@@ -111,6 +172,27 @@ class Monopoly extends FamilyGame
 }
 
 
+class Clue extends FamilyGame
+{
+    public Clue(String name)
+    {
+        super(name);
+    }
+}
+
+
+class Life extends FamilyGame
+{
+    public Life(String name)
+    {
+        super(name);
+    }
+}
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Catan, Risk, Gloomhaven
 class BoardGame extends Game {
@@ -120,5 +202,39 @@ class BoardGame extends Game {
         width = Utility.rndFromRange(8,24);
         length = Utility.rndFromRange(12,36);
         price = Utility.rndFromRange(40,100);
+        genre = "Board";
     }
 }
+
+
+
+
+class Catan extends BoardGame
+{
+    public Catan(String name)
+    {
+        super(name);
+    }
+}
+
+
+
+class Risk extends BoardGame
+{
+    public Risk(String name)
+    {
+        super(name);
+    }
+}
+
+
+
+class Gloomhaven extends BoardGame
+{
+    public Gloomhaven(String name)
+    {
+        super(name);
+    }
+}
+
+

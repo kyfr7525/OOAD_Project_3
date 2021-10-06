@@ -10,10 +10,11 @@ public class Main {
 
     public static void main(String[] args) {
 
+        Announcer announce = new Announcer("guy");
         //Call the simulator to run for that many days
         Simulator simulator = new Simulator();
 //        System.out.println("Starting simulator for "+NUMBER_OF_DAYS+" days");     // original Bruce Montgomery code
-        System.out.println("Starting " + NUMBER_OF_DAYS + " day simulator");
+        announce.makeAnnouncement("Starting the " + NUMBER_OF_DAYS + " day simulator");
         simulator.run(NUMBER_OF_DAYS);
     }
 }

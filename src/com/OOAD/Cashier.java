@@ -23,6 +23,12 @@ public class Cashier extends ObservableEmployee {
     int chanceToBuyGame;
 
 
+    int buyMonopolyToken;
+    int buySpecialCards;
+    int buyMousetrapSpares;
+    int buyGloomhavenMiniatures;
+    int numPiecesBought;
+
 
 /////////////////////////////////////////////////// ^
 
@@ -177,7 +183,7 @@ The logic for damaging games should be delegated and referred to by both this lo
         // TODO delete for announcement
         System.out.println("Number of customers: " + numCustomers);
 
-        for (int i = 0; i < numCustomers; i++) // give *each* customer a chance of buying cookies and games
+        for (int i = 1; i < numCustomers + 1; i++) // give *each* customer a chance of buying cookies and games
         {
             chanceToBuyGame = 20; // every normal customer always starts off with a 20% chance to buy a game
             gamesPurchased = 0;
@@ -222,12 +228,9 @@ The logic for damaging games should be delegated and referred to by both this lo
             // Now customers will look at the games
 
 
-// TODO delcare up top
-
-            int buyMonopolyToken;
 
 
-            // CREDIT TO BRUCE MONTGOMERY:
+            // CREDIT TO BRUCE MONTGOMERY for original implementation for customers buying a game:
             for (Game g:store.games)
             {
                 if (gamesPurchased <= 1)
@@ -242,7 +245,19 @@ The logic for damaging games should be delegated and referred to by both this lo
                             g.countSold += 1;
 //                            System.out.println(name + " sold " + g.name + " to customer " + c + " for " + Utility.asDollar(g.price));
 
-//                            TODO announce that a game was purchase and for how much
+                            announcer.makeAnnouncement(name + " sold " + g.name + " to customer " + i + " for " + Utility.asDollar(g.price));
+
+                            /*
+                                a. Monopoly – someone buying a Monopoly game will optionally add 1 Special Tokens pack to
+                                    their purchase 50% of the time
+                                b. For all Card Games – someone buying a Card game will optionally add 1 to 6 Special Cards to
+                                    their purchase 20% of the time
+                                c. Mousetrap – someone buying a Mousetrap game will optionally add 1 to 2 Spare Parts to their
+                                    purchase 30% of the time
+                                d. Gloomhaven – someone buying Gloomhaven will optionally add 1 to 4 Custom Miniatures to
+                                    their purchase 20% of the time
+                            */
+
 
                             if (g.name == "Monopoly")
                             {
@@ -250,15 +265,52 @@ The logic for damaging games should be delegated and referred to by both this lo
 
                                 if (buyMonopolyToken <= 50)
                                 {
-                                    new MonopolyDecorator(new Monopoly("Monopoly"), "Monopoly Special Token", Utility.rndFromRange(2,5));
+                                    new MonopolyDecorator(new Monopoly("Monopoly"), "Monopoly Special Token", Utility.rndFromRange(2,5), 1);
+                                    announcer.makeAnnouncement("Customer " + i + " also decided to purchase a special token for Monopoly!");
                                 }
 
                             }
 
+                            else if (g.genre == "Card")     // is Card good?
+                            {
+                                buySpecialCards = Utility.rndFromRange(1,100);
+
+                                numPiecesBought = Utility.rndFromRange(1,6);
+
+                                if (buySpecialCards <= 20)
+                                {
+                                    new CardDecorator(new CardGame(g.name), "Special Cards", Utility.rndFromRange(4,10), numPiecesBought);
+                                    announcer.makeAnnouncement("Customer " + i + " also decided to purchase " + numPiecesBought + " Special Card(s)!");
+                                }
+                            }
 
 
-                            // TODO finish the rest of the decorators
+                            else if (g.name == "Mousetrap")
+                            {
+                                buyMousetrapSpares = Utility.rndFromRange(1,100);
 
+                                numPiecesBought = Utility.rndFromRange(1,2);
+
+                                if (buyMousetrapSpares <= 30)
+                                {
+                                    new MousetrapDecorator(new Mousetrap("Mousetrap"), "Mousetrap Spare Parts", Utility.rndFromRange(5,10), numPiecesBought);
+                                    announcer.makeAnnouncement("Customer " + i + " also decided to purchase " + numPiecesBought + " Spare Part(s)!");
+                                }
+                            }
+
+
+                            else if (g.name == "Gloomhaven")
+                            {
+                                buyGloomhavenMiniatures = Utility.rndFromRange(1,100);
+
+                                numPiecesBought = Utility.rndFromRange(1,4);
+
+                                if (buyGloomhavenMiniatures <= 20)
+                                {
+                                    new GloomDecorator(new Gloomhaven("Gloomhaven"), "Gloomhaven Custom Miniatures", Utility.rndFromRange(10,20),numPiecesBought);
+                                    announcer.makeAnnouncement("Customer " + i + " also decided to purchase " + numPiecesBought + " Custom Miniature(s)!");
+                                }
+                            }
 
 
 

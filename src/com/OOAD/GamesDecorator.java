@@ -4,7 +4,7 @@ package com.OOAD;
 // our addition of the Decorator Pattern
 
 /*
- // TODO
+
     Use a Decorator pattern implementation to support the following optional purchases and additional cost for
     these games:
         a. Monopoly – someone buying a Monopoly game will optionally add 1 Special Tokens pack to their purchase 50% of the time
@@ -24,6 +24,7 @@ public abstract class GamesDecorator extends Game
     Game game;
 
     double priceForExtras;
+    int numberOfPieces;
 
     public GamesDecorator(Game game)
     {
@@ -35,7 +36,7 @@ public abstract class GamesDecorator extends Game
     @Override
     public double getGamePrice()
     {
-        return this.game.getGamePrice() + priceForExtras; // get the base price and add the cost of extra
+        return this.game.getGamePrice() + (priceForExtras * numberOfPieces); // get the base price and add the cost of extra
     }
 }
 
@@ -43,51 +44,51 @@ public abstract class GamesDecorator extends Game
 class MonopolyDecorator extends GamesDecorator
 {
 
-    public MonopolyDecorator(Game game, String name, double price)
+    public MonopolyDecorator(Game game, String name, double price, int numPieces)
     {
         super(game);
         this.game = game;
         this.priceForExtras = price;
         this.name = name;
-
+        this.numberOfPieces = numPieces;
     }
 }
 
 class CardDecorator extends GamesDecorator
 {
 
-    public CardDecorator(Game game, String name, double price)
+    public CardDecorator(Game game, String name, double price, int numPieces)
     {
         super(game);
         this.game = game;
         this.priceForExtras = price;
         this.name = name;
-
+        this.numberOfPieces = numPieces;
     }
 }
 
 class MousetrapDecorator extends GamesDecorator
 {
 
-    public MousetrapDecorator(Game game, String name, double price)
+    public MousetrapDecorator(Game game, String name, double price, int numPieces)
     {
         super(game);
         this.game = game;
         this.priceForExtras = price;
         this.name = name;
-
+        this.numberOfPieces = numPieces;
     }
 }
 
 class GloomDecorator extends GamesDecorator
 {
 
-    public GloomDecorator(Game game, String name, double price)
+    public GloomDecorator(Game game, String name, double price, int numPieces)
     {
         super(game);
         this.game = game;
         this.priceForExtras = price;
         this.name = name;
-
+        this.numberOfPieces = numPieces;
     }
 }

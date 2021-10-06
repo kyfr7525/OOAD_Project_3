@@ -27,21 +27,28 @@ public class Baker extends ObservableEmployee
 {
     int numPacksOfCookies = 1;
     double cookiePrice = Utility.rndFromRange(5,15); // determine rand price to sell a pack of cookies to customers between $5 and $15
+    double totalCookieMoney;
 
-    public Baker(String name, Announcer a)
+    public Baker(String name, Announcer announcer)
     {
-        super(name, a);
+        super(name, announcer);
     }
 
 
-//    TODO determine the num of cookie packages and observable publisher stuff
 
 
     public void cookieDelivery(Store store)
     {
         // note: store.registerCash will control the amount of money in the register
         // pay Gonger for his cookies
+        totalCookieMoney += numPacksOfCookies * (cookiePrice /2);
+
         store.registerCash -= (numPacksOfCookies * (cookiePrice /2));
         store.numCookiesAvailable += numPacksOfCookies;
+
+        announcer.makeAnnouncement("Gonger is here to deliver cookies.");
+        announcer.makeAnnouncement("Gonger is dropping off " + numPacksOfCookies + " packages of cookies.");
+        announcer.makeAnnouncement("Gonger receives $" + Utility.asDollar(numPacksOfCookies * (cookiePrice /2))+ " for his cookies.");
+        announcer.makeAnnouncement("Gonger leaves for the day.");
     }
 }
