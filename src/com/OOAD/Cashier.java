@@ -182,6 +182,13 @@ The logic for damaging games should be delegated and referred to by both this lo
 
         announcer.makeAnnouncement(numCustomers + " customers have arrived at the store.");
 
+
+
+
+        /// !!!!!!!!!!!!!! TODO IMPLEMENT THE COOKIE MONSTER
+
+
+
         for (int i = 1; i < numCustomers + 1; i++) // give *each* customer a chance of buying cookies and games
         {
             chanceToBuyGame = 20; // every normal customer always starts off with a 20% chance to buy a game
@@ -246,7 +253,7 @@ The logic for damaging games should be delegated and referred to by both this lo
                             store.registerCash += g.price;
                             g.countInventory -= 1;
                             g.countSold += 1;
-//                            System.out.println(name + " sold " + g.name + " to customer " + c + " for " + Utility.asDollar(g.price));
+
 
                             announcer.makeAnnouncement(name + " sold " + g.name + " to customer " + i + " for " + Utility.asDollar(g.price));
 
