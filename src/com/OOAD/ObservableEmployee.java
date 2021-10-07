@@ -17,7 +17,8 @@ public class ObservableEmployee extends Employee
 
         announcer.makeAnnouncement(name+" has arrived on day "+day);
 
-    }  // TODO call to announcer
+    }
+
     public void leaveTheStore()
     {
 //        System.out.println(name+" has left on day "+day);

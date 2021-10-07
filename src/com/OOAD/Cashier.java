@@ -21,6 +21,8 @@ public class Cashier extends ObservableEmployee {
     int customerGeneralChanceCookies; // chance of customers ACTUALLY buying cookies
     int gamesPurchased;
     int chanceToBuyGame;
+    int chanceCookieMonster;
+    boolean isCookieMonster = false;
 
 
     int buyMonopolyToken;
@@ -67,6 +69,22 @@ public class Cashier extends ObservableEmployee {
             announcer.makeAnnouncement(name+" added $1000 to the register, now at $"+store.registerCash);
         }
     }
+
+
+
+    // new method to check the register after buying cookies
+    public void countMoneyAgain(Store store)
+    {
+        announcer.makeAnnouncement("After buying cookies from Gonger, " + name + " counts the money in the register again");
+        announcer.makeAnnouncement(name+" sees "+Utility.asDollar(store.registerCash)+" in the register");
+        if (store.registerCash < 100) {
+            store.registerCash += 1000;
+            store.registerAdds += 1;
+            announcer.makeAnnouncement(name+" added $1000 to the register, now at $"+store.registerCash);
+        }
+    }
+
+
 
     public void vacuumTheStore(Store store) {
         announcer.makeAnnouncement(name+" vacuums the store");
@@ -172,8 +190,12 @@ The logic for damaging games should be delegated and referred to by both this lo
 // *** should be able to access the poisson function in Utility.java with Utility.getPoissonRandom(double mean)
 
 
+//    private void sell(Store store, Baker baker, CookieMonster cookie)
+//    {
+//
+//    }
 
-    public void openTheStore(Store store, Baker baker) // need baker as a parameter to be able to access baker methods
+    public void openTheStore(Store store, Baker baker, CookieMonster cookie) // need baker as a parameter to be able to access baker methods
     {
         numCustomers = Utility.getPoissonRandom(3);  // does this already factor in the range specified in the requirements?
 
@@ -185,7 +207,14 @@ The logic for damaging games should be delegated and referred to by both this lo
 
 
 
-        /// !!!!!!!!!!!!!! TODO IMPLEMENT THE COOKIE MONSTER
+
+        chanceCookieMonster = Utility.rndFromRange(1,100);
+
+        if (chanceCookieMonster == 1); // 1% chance the customer is the Cookie Monster
+        {
+            isCookieMonster = true;
+//            numCustomers -= 1;
+        }
 
 
 
@@ -196,142 +225,153 @@ The logic for damaging games should be delegated and referred to by both this lo
             numCookiesToBuy = Utility.rndFromRange(1,3); // number of cookies a customer wants to buy
             customerGeneralChanceCookies = Utility.rndFromRange(10,50); // the chance a customer ACTUALLY wants to buy cookies
 
-            if (store.numCookiesAvailable == 0) // regardless if they want to buy or not, they're upset they don't have the option
+
+
+
+            if (isCookieMonster == true)  // if the customer is the cookie monster
             {
-                // there are no cookies for the customer to buy, which makes them angry; -10% chance of buying a game
-
-                announcer.makeAnnouncement("Sadly, there are no cookies available for customers to buy.");
-
-                chanceToBuyGame -= 10;
+                cookie.eatAllCookies(store, announcer);
+                isCookieMonster = false;
             }
+
+
+
+            else // normal customer
+            {
+                if (store.numCookiesAvailable == 0) // regardless if they want to buy or not, they're upset they don't have the option
+                {
+                    // there are no cookies for the customer to buy, which makes them angry; -10% chance of buying a game
+
+                    announcer.makeAnnouncement("Sadly, there are no cookies available for customer " + i + " to buy.");
+
+                    chanceToBuyGame -= 10;
+                }
 
                 // if the chance to want to buy is <= to the chance of buying cookies AND there are cookies available
-            else if (customerGeneralChanceCookies <= chanceToBuyCookies && store.numCookiesAvailable > 0)
-            {
-                // buy some cookies! customers are 20% more likely to buy a game
-
-
-                if (numCookiesToBuy > store.numCookiesAvailable)
+                else if (customerGeneralChanceCookies <= chanceToBuyCookies && store.numCookiesAvailable > 0)
                 {
-                    numCookiesToBuy = store.numCookiesAvailable; // chance the num cookies that the customer wants to buy to what's left in store
-                    announcer.makeAnnouncement("Customer " + i + " took the last " + store.numCookiesAvailable + " package(s) of cookies.");
+                    // buy some cookies! customers are 20% more likely to buy a game
 
-                    store.numCookiesAvailable = 0;
+
+                    if (numCookiesToBuy > store.numCookiesAvailable)
+                    {
+                        numCookiesToBuy = store.numCookiesAvailable; // chance the num cookies that the customer wants to buy to what's left in store
+                        announcer.makeAnnouncement("Customer " + i + " took the last " + store.numCookiesAvailable + " package(s) of cookies.");
+
+                        store.numCookiesAvailable = 0;
+
+                    }
+
+                    else
+                    {
+                        store.numCookiesAvailable -= numCookiesToBuy;
+                    }
+
+                    store.registerCash += (baker.cookiePrice * numCookiesToBuy);   // money made from cookie sales
+
+                    announcer.makeAnnouncement("Customer " + i + " bought " + numCookiesToBuy + " package(s) of cookies for a total of " + Utility.asDollar(baker.cookiePrice * numCookiesToBuy) + ".");
+
+                    chanceToBuyGame += 20;
 
                 }
-
-                else
-                {
-                    store.numCookiesAvailable -= numCookiesToBuy;
-                }
-
-                store.registerCash += (baker.cookiePrice * numCookiesToBuy);   // money made from cookie sales
-
-                announcer.makeAnnouncement("Customer " + i + " bought " + numCookiesToBuy + " package(s) of cookies for a total of " + Utility.asDollar(baker.cookiePrice * numCookiesToBuy) + ".");
-
-                chanceToBuyGame += 20;
-
-            }
 
 
 
             // Now customers will look at the games
 
 
+                // CREDIT TO BRUCE MONTGOMERY for original implementation for customers buying a game:
+                for (Game g:store.games)
+                {
+                    if (gamesPurchased <= 1)
+                    {   // two game purchase limit
+                        if (Utility.rndFromRange(1,100) <= chanceToBuyGame)
+                        {
+                            //buying this game if it's on the shelf
+                            if (g.countInventory > 0) {
+                                gamesPurchased += 1;
+                                store.registerCash += g.price;
+                                g.countInventory -= 1;
+                                g.countSold += 1;
 
 
-            // CREDIT TO BRUCE MONTGOMERY for original implementation for customers buying a game:
-            for (Game g:store.games)
-            {
-                if (gamesPurchased <= 1)
-                {   // two game purchase limit
-                    if (Utility.rndFromRange(1,100) <= chanceToBuyGame)
-                    {
-                        //buying this game if it's on the shelf
-                        if (g.countInventory > 0) {
-                            gamesPurchased += 1;
-                            store.registerCash += g.price;
-                            g.countInventory -= 1;
-                            g.countSold += 1;
+                                announcer.makeAnnouncement(name + " sold " + g.name + " to customer " + i + " for " + Utility.asDollar(g.price));
+
+                                /*
+                                    a. Monopoly – someone buying a Monopoly game will optionally add 1 Special Tokens pack to
+                                        their purchase 50% of the time
+                                    b. For all Card Games – someone buying a Card game will optionally add 1 to 6 Special Cards to
+                                        their purchase 20% of the time
+                                    c. Mousetrap – someone buying a Mousetrap game will optionally add 1 to 2 Spare Parts to their
+                                        purchase 30% of the time
+                                    d. Gloomhaven – someone buying Gloomhaven will optionally add 1 to 4 Custom Miniatures to
+                                        their purchase 20% of the time
+                                */
 
 
-                            announcer.makeAnnouncement(name + " sold " + g.name + " to customer " + i + " for " + Utility.asDollar(g.price));
-
-                            /*
-                                a. Monopoly – someone buying a Monopoly game will optionally add 1 Special Tokens pack to
-                                    their purchase 50% of the time
-                                b. For all Card Games – someone buying a Card game will optionally add 1 to 6 Special Cards to
-                                    their purchase 20% of the time
-                                c. Mousetrap – someone buying a Mousetrap game will optionally add 1 to 2 Spare Parts to their
-                                    purchase 30% of the time
-                                d. Gloomhaven – someone buying Gloomhaven will optionally add 1 to 4 Custom Miniatures to
-                                    their purchase 20% of the time
-                            */
-
-
-                            if (g.name == "Monopoly")
-                            {
-                                buyMonopolyToken = Utility.rndFromRange(1,100);
-
-                                if (buyMonopolyToken <= 50)
+                                if (g.name == "Monopoly")
                                 {
-                                    new MonopolyDecorator(new Monopoly("Monopoly"), "Monopoly Special Token", Utility.rndFromRange(2,5), 1);
-                                    announcer.makeAnnouncement("Customer " + i + " also decided to purchase a special token for Monopoly!");
+                                    buyMonopolyToken = Utility.rndFromRange(1,100);
 
-                                    // announcer.makeAnnouncement("Customer " + i + " also decided to purchase a special token for Monopoly for a total of " + MonopolyDecorator.getGamePrice());
+                                    if (buyMonopolyToken <= 50)
+                                    {
+                                        new MonopolyDecorator(new Monopoly("Monopoly"), "Monopoly Special Token", Utility.rndFromRange(2,5), 1);
+                                        announcer.makeAnnouncement("Customer " + i + " also decided to purchase a special token for Monopoly!");
 
+                                        // announcer.makeAnnouncement("Customer " + i + " also decided to purchase a special token for Monopoly for a total of " + MonopolyDecorator.getGamePrice());
+
+                                    }
                                 }
 
-                            }
-
-                            else if (g.genre == "Card")     // is Card good?
-                            {
-                                buySpecialCards = Utility.rndFromRange(1,100);
-
-                                numPiecesBought = Utility.rndFromRange(1,6);
-
-                                if (buySpecialCards <= 20)
+                                else if (g.genre == "Card")     // is Card good?
                                 {
-                                    new CardDecorator(new CardGame(g.name), "Special Cards", Utility.rndFromRange(4,10), numPiecesBought);
-                                    announcer.makeAnnouncement("Customer " + i + " also decided to purchase " + numPiecesBought + " Special Card(s)!");
+                                    buySpecialCards = Utility.rndFromRange(1,100);
+
+                                    numPiecesBought = Utility.rndFromRange(1,6);
+
+                                    if (buySpecialCards <= 20)
+                                    {
+                                        new CardDecorator(new CardGame(g.name), "Special Cards", Utility.rndFromRange(4,10), numPiecesBought);
+                                        announcer.makeAnnouncement("Customer " + i + " also decided to purchase " + numPiecesBought + " Special Card(s)!");
+                                    }
                                 }
-                            }
 
 
-                            else if (g.name == "Mousetrap")
-                            {
-                                buyMousetrapSpares = Utility.rndFromRange(1,100);
-
-                                numPiecesBought = Utility.rndFromRange(1,2);
-
-                                if (buyMousetrapSpares <= 30)
+                                else if (g.name == "Mousetrap")
                                 {
-                                    new MousetrapDecorator(new Mousetrap("Mousetrap"), "Mousetrap Spare Parts", Utility.rndFromRange(5,10), numPiecesBought);
-                                    announcer.makeAnnouncement("Customer " + i + " also decided to purchase " + numPiecesBought + " Spare Part(s)!");
+                                    buyMousetrapSpares = Utility.rndFromRange(1,100);
+
+                                    numPiecesBought = Utility.rndFromRange(1,2);
+
+                                    if (buyMousetrapSpares <= 30)
+                                    {
+                                        new MousetrapDecorator(new Mousetrap("Mousetrap"), "Mousetrap Spare Parts", Utility.rndFromRange(5,10), numPiecesBought);
+                                        announcer.makeAnnouncement("Customer " + i + " also decided to purchase " + numPiecesBought + " Spare Part(s)!");
+                                    }
                                 }
-                            }
 
 
-                            else if (g.name == "Gloomhaven")
-                            {
-                                buyGloomhavenMiniatures = Utility.rndFromRange(1,100);
-
-                                numPiecesBought = Utility.rndFromRange(1,4);
-
-                                if (buyGloomhavenMiniatures <= 20)
+                                else if (g.name == "Gloomhaven")
                                 {
-                                    new GloomDecorator(new Gloomhaven("Gloomhaven"), "Gloomhaven Custom Miniatures", Utility.rndFromRange(10,20),numPiecesBought);
-                                    announcer.makeAnnouncement("Customer " + i + " also decided to purchase " + numPiecesBought + " Custom Miniature(s)!");
+                                    buyGloomhavenMiniatures = Utility.rndFromRange(1,100);
+
+                                    numPiecesBought = Utility.rndFromRange(1,4);
+
+                                    if (buyGloomhavenMiniatures <= 20)
+                                    {
+                                        new GloomDecorator(new Gloomhaven("Gloomhaven"), "Gloomhaven Custom Miniatures", Utility.rndFromRange(10,20),numPiecesBought);
+                                        announcer.makeAnnouncement("Customer " + i + " also decided to purchase " + numPiecesBought + " Custom Miniature(s)!");
+                                    }
                                 }
+
+
+
                             }
-
-
-
                         }
                     }
-                }
 
-                    chanceToBuyGame -= 2;
+                        chanceToBuyGame -= 2;
+                }
             }
         }
     }

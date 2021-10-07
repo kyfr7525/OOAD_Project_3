@@ -21,6 +21,7 @@ public class Store {
     double cookieFund; // starts at $0; this is how much money is spent on Gonger's cookies
     int numCookiesAvailable; // number of cookie packs available to sell
     Baker baker = new Baker("Gonger", announcer);
+    CookieMonster cookieMonster = new CookieMonster("Cookie Monster");
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -90,12 +91,14 @@ public class Store {
 
         baker.cookieDelivery(this);
 
+        activeCashier.countMoneyAgain(this);
+
         announcer.makeAnnouncement("");
         activeCashier.vacuumTheStore(this);
         announcer.makeAnnouncement("");
         activeCashier.stackTheGames(games);
 //        announcer.makeAnnouncement("");
-        activeCashier.openTheStore(this, baker);    // adding baker as a parameter
+        activeCashier.openTheStore(this, baker, cookieMonster);    // adding baker as a parameter
         announcer.makeAnnouncement("");
         activeCashier.orderNewGames(this, baker);
         announcer.makeAnnouncement("");
@@ -129,6 +132,9 @@ public class Store {
                 announcer.makeAnnouncement("Game: " + g.name+"\t\t Inventory: "+g.countInventory);
             }
         }
+
+        announcer.makeAnnouncement("Number of cookie packages stolen by the Cookie Monster: " + cookieMonster.packsOfCookiesStolen);
+
         // final register count
         announcer.makeAnnouncement("Final register funds: "+Utility.asDollar(registerCash));
         // additions to register
