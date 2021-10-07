@@ -1,0 +1,1027 @@
+Starting the 30 day simulator
+-----------------
+Day 1
+Guy is here first thing in the morning on day 1.
+
+Ernie has arrived on day 1
+
+Ernie counts the money.
+Ernie sees $0.00 in the register
+Ernie added $1000 to the register, now at $1000.0
+
+Gonger is here to deliver cookies.
+Gonger is dropping off 1 packages of cookies.
+Gonger receives $6.50 for his cookies.
+Gonger leaves for the day.
+After buying cookies from Gonger, Ernie counts the money in the register again
+Ernie sees $993.50 in the register
+
+Ernie vacuums the store
+Ernie did not break a game!
+
+3 customers have arrived at the store.
+Oh no! The customer was the Cookie Monster in disguise!
+The Cookie Monster ate all 1 packages of cookies, so there are none left!
+While storming away after eating all of the cookies, the Cookie Monster broke 4 game(s)!
+Sadly, there are no cookies available for customer 2 to buy.
+Sadly, there are no cookies available for customer 3 to buy.
+
+Ernie did not order any games
+
+Ernie is closing the store
+Ernie has left for the day
+Guy is the last to leave the store for the night.
+-----------------
+Day 2
+Guy is here first thing in the morning on day 2.
+
+Bart has arrived on day 2
+
+Bart counts the money.
+Bart sees $993.50 in the register
+
+Gonger is here to deliver cookies.
+Gonger is dropping off 2 packages of cookies.
+Gonger receives $13.00 for his cookies.
+Gonger leaves for the day.
+After buying cookies from Gonger, Bart counts the money in the register again
+Bart sees $980.50 in the register
+
+Bart vacuums the store
+Bart did not break a game!
+
+0 customers have arrived at the store.
+
+Bart did not order any games
+
+Bart is closing the store
+Bart has left for the day
+Guy is the last to leave the store for the night.
+-----------------
+Day 3
+Guy is here first thing in the morning on day 3.
+
+Ernie has arrived on day 3
+
+Ernie counts the money.
+Ernie sees $980.50 in the register
+
+Gonger is here to deliver cookies.
+Gonger is dropping off 1 packages of cookies.
+Gonger receives $6.50 for his cookies.
+Gonger leaves for the day.
+After buying cookies from Gonger, Ernie counts the money in the register again
+Ernie sees $974.00 in the register
+
+Ernie vacuums the store
+Ernie did not break a game!
+
+0 customers have arrived at the store.
+
+Ernie did not order any games
+
+Ernie is closing the store
+Ernie has left for the day
+Guy is the last to leave the store for the night.
+-----------------
+Day 4
+Guy is here first thing in the morning on day 4.
+
+Bart has arrived on day 4
+
+Bart counts the money.
+Bart sees $974.00 in the register
+
+Gonger is here to deliver cookies.
+Gonger is dropping off 1 packages of cookies.
+Gonger receives $6.50 for his cookies.
+Gonger leaves for the day.
+After buying cookies from Gonger, Bart counts the money in the register again
+Bart sees $967.50 in the register
+
+Bart vacuums the store
+Bart did not break a game!
+
+2 customers have arrived at the store.
+Oh no! The customer was the Cookie Monster in disguise!
+The Cookie Monster ate all 4 packages of cookies, so there are none left!
+While storming away after eating all of the cookies, the Cookie Monster broke 6 game(s)!
+Sadly, there are no cookies available for customer 2 to buy.
+
+Bart ordering new copies of Risk
+Bart ordered new games for $78.00
+
+Bart is closing the store
+Bart has left for the day
+Guy is the last to leave the store for the night.
+-----------------
+Day 5
+Guy is here first thing in the morning on day 5.
+
+Burt has arrived on day 5
+
+Burt counts the money.
+Burt sees $889.50 in the register
+
+Gonger is here to deliver cookies.
+Gonger is dropping off 2 packages of cookies.
+Gonger receives $13.00 for his cookies.
+Gonger leaves for the day.
+After buying cookies from Gonger, Burt counts the money in the register again
+Burt sees $876.50 in the register
+
+Burt vacuums the store
+Burt did not break a game!
+
+2 customers have arrived at the store.
+Oh no! The customer was the Cookie Monster in disguise!
+The Cookie Monster ate all 2 packages of cookies, so there are none left!
+While storming away after eating all of the cookies, the Cookie Monster broke 6 game(s)!
+Sadly, there are no cookies available for customer 2 to buy.
+
+Burt ordering new copies of Risk
+Burt ordering new copies of Monopoly
+Burt ordered new games for $103.50
+
+Burt is closing the store
+Burt has left for the day
+Guy is the last to leave the store for the night.
+-----------------
+Day 6
+Guy is here first thing in the morning on day 6.
+
+Ernie has arrived on day 6
+
+Ernie counts the money.
+Ernie sees $773.00 in the register
+
+Gonger is here to deliver cookies.
+Gonger is dropping off 3 packages of cookies.
+Gonger receives $19.50 for his cookies.
+Gonger leaves for the day.
+After buying cookies from Gonger, Ernie counts the money in the register again
+Ernie sees $753.50 in the register
+
+Ernie vacuums the store
+Ernie broke a game!
+
+2 customers have arrived at the store.
+Oh no! The customer was the Cookie Monster in disguise!
+The Cookie Monster ate all 3 packages of cookies, so there are none left!
+While storming away after eating all of the cookies, the Cookie Monster broke 4 game(s)!
+Sadly, there are no cookies available for customer 2 to buy.
+Ernie sold Gloomhaven to customer 2 for $95.00
+
+Ernie ordering new copies of Pokémon
+Ernie ordering new copies of Candyland
+Ernie ordered new games for $55.50
+
+Ernie is closing the store
+Ernie has left for the day
+Guy is the last to leave the store for the night.
+-----------------
+Day 7
+Guy is here first thing in the morning on day 7.
+
+Burt has arrived on day 7
+
+Burt counts the money.
+Burt sees $793.00 in the register
+
+Gonger is here to deliver cookies.
+Gonger is dropping off 4 packages of cookies.
+Gonger receives $26.00 for his cookies.
+Gonger leaves for the day.
+After buying cookies from Gonger, Burt counts the money in the register again
+Burt sees $767.00 in the register
+
+Burt vacuums the store
+Burt did not break a game!
+
+5 customers have arrived at the store.
+Oh no! The customer was the Cookie Monster in disguise!
+The Cookie Monster ate all 4 packages of cookies, so there are none left!
+While storming away after eating all of the cookies, the Cookie Monster broke 4 game(s)!
+Sadly, there are no cookies available for customer 2 to buy.
+Sadly, there are no cookies available for customer 3 to buy.
+Sadly, there are no cookies available for customer 4 to buy.
+Sadly, there are no cookies available for customer 5 to buy.
+
+Burt did not order any games
+
+Burt is closing the store
+Burt has left for the day
+Guy is the last to leave the store for the night.
+-----------------
+Day 8
+Guy is here first thing in the morning on day 8.
+
+Burt has arrived on day 8
+
+Burt counts the money.
+Burt sees $767.00 in the register
+
+Gonger is here to deliver cookies.
+Gonger is dropping off 5 packages of cookies.
+Gonger receives $32.50 for his cookies.
+Gonger leaves for the day.
+After buying cookies from Gonger, Burt counts the money in the register again
+Burt sees $734.50 in the register
+
+Burt vacuums the store
+Burt did not break a game!
+
+4 customers have arrived at the store.
+Oh no! The customer was the Cookie Monster in disguise!
+The Cookie Monster ate all 5 packages of cookies, so there are none left!
+While storming away after eating all of the cookies, the Cookie Monster broke 6 game(s)!
+Sadly, there are no cookies available for customer 2 to buy.
+Sadly, there are no cookies available for customer 3 to buy.
+Sadly, there are no cookies available for customer 4 to buy.
+Burt sold Candyland to customer 4 for $13.00
+
+Burt ordering new copies of Catan
+Burt ordering new copies of Mousetrap
+Burt ordered new games for $84.00
+
+Burt is closing the store
+Burt has left for the day
+Guy is the last to leave the store for the night.
+-----------------
+Day 9
+Guy is here first thing in the morning on day 9.
+
+Bart has arrived on day 9
+
+Bart counts the money.
+Bart sees $663.50 in the register
+
+Gonger is here to deliver cookies.
+Gonger is dropping off 6 packages of cookies.
+Gonger receives $39.00 for his cookies.
+Gonger leaves for the day.
+After buying cookies from Gonger, Bart counts the money in the register again
+Bart sees $624.50 in the register
+
+Bart vacuums the store
+Bart did not break a game!
+
+1 customers have arrived at the store.
+Oh no! The customer was the Cookie Monster in disguise!
+The Cookie Monster ate all 6 packages of cookies, so there are none left!
+While storming away after eating all of the cookies, the Cookie Monster broke 5 game(s)!
+
+Bart ordering new copies of Clue
+Bart ordering new copies of Magic
+Bart ordered new games for $64.50
+
+Bart is closing the store
+Bart has left for the day
+Guy is the last to leave the store for the night.
+-----------------
+Day 10
+Guy is here first thing in the morning on day 10.
+
+Bart has arrived on day 10
+
+Bart counts the money.
+Bart sees $560.00 in the register
+
+Gonger is here to deliver cookies.
+Gonger is dropping off 7 packages of cookies.
+Gonger receives $45.50 for his cookies.
+Gonger leaves for the day.
+After buying cookies from Gonger, Bart counts the money in the register again
+Bart sees $514.50 in the register
+
+Bart vacuums the store
+Bart did not break a game!
+
+1 customers have arrived at the store.
+Oh no! The customer was the Cookie Monster in disguise!
+The Cookie Monster ate all 7 packages of cookies, so there are none left!
+While storming away after eating all of the cookies, the Cookie Monster broke 6 game(s)!
+
+Bart ordering new copies of Candyland
+Bart ordering new copies of Life
+Bart ordering new copies of Pokémon
+Bart ordering new copies of Netrunner
+Bart ordered new games for $109.50
+
+Bart is closing the store
+Bart has left for the day
+Guy is the last to leave the store for the night.
+-----------------
+Day 11
+Guy is here first thing in the morning on day 11.
+
+Bart has arrived on day 11
+
+Bart counts the money.
+Bart sees $405.00 in the register
+
+Gonger is here to deliver cookies.
+Gonger is dropping off 8 packages of cookies.
+Gonger receives $52.00 for his cookies.
+Gonger leaves for the day.
+After buying cookies from Gonger, Bart counts the money in the register again
+Bart sees $353.00 in the register
+
+Bart vacuums the store
+Bart did not break a game!
+
+5 customers have arrived at the store.
+Oh no! The customer was the Cookie Monster in disguise!
+The Cookie Monster ate all 8 packages of cookies, so there are none left!
+While storming away after eating all of the cookies, the Cookie Monster broke 1 game(s)!
+Sadly, there are no cookies available for customer 2 to buy.
+Bart sold Life to customer 2 for $13.00
+Sadly, there are no cookies available for customer 3 to buy.
+Sadly, there are no cookies available for customer 4 to buy.
+Sadly, there are no cookies available for customer 5 to buy.
+
+Bart did not order any games
+
+Bart is closing the store
+Bart has left for the day
+Guy is the last to leave the store for the night.
+-----------------
+Day 12
+Guy is here first thing in the morning on day 12.
+
+Bart has arrived on day 12
+
+Bart counts the money.
+Bart sees $366.00 in the register
+
+Gonger is here to deliver cookies.
+Gonger is dropping off 9 packages of cookies.
+Gonger receives $58.50 for his cookies.
+Gonger leaves for the day.
+After buying cookies from Gonger, Bart counts the money in the register again
+Bart sees $307.50 in the register
+
+Bart vacuums the store
+Bart did not break a game!
+
+4 customers have arrived at the store.
+Oh no! The customer was the Cookie Monster in disguise!
+The Cookie Monster ate all 9 packages of cookies, so there are none left!
+While storming away after eating all of the cookies, the Cookie Monster broke 5 game(s)!
+Sadly, there are no cookies available for customer 2 to buy.
+Sadly, there are no cookies available for customer 3 to buy.
+Sadly, there are no cookies available for customer 4 to buy.
+Bart sold Pokémon to customer 4 for $24.00
+
+Bart ordering new copies of Risk
+Bart ordered new games for $78.00
+
+Bart is closing the store
+Bart has left for the day
+Guy is the last to leave the store for the night.
+-----------------
+Day 13
+Guy is here first thing in the morning on day 13.
+
+Bart has arrived on day 13
+
+Bart counts the money.
+Bart sees $253.50 in the register
+
+Gonger is here to deliver cookies.
+Gonger is dropping off 10 packages of cookies.
+Gonger receives $65.00 for his cookies.
+Gonger leaves for the day.
+After buying cookies from Gonger, Bart counts the money in the register again
+Bart sees $188.50 in the register
+
+Bart vacuums the store
+Bart did not break a game!
+
+7 customers have arrived at the store.
+Oh no! The customer was the Cookie Monster in disguise!
+The Cookie Monster ate all 10 packages of cookies, so there are none left!
+While storming away after eating all of the cookies, the Cookie Monster broke 4 game(s)!
+Sadly, there are no cookies available for customer 2 to buy.
+Sadly, there are no cookies available for customer 3 to buy.
+Bart sold Risk to customer 3 for $52.00
+Sadly, there are no cookies available for customer 4 to buy.
+Sadly, there are no cookies available for customer 5 to buy.
+Sadly, there are no cookies available for customer 6 to buy.
+Sadly, there are no cookies available for customer 7 to buy.
+
+Bart ordering new copies of Mousetrap
+Bart ordered new games for $18.00
+
+Bart is closing the store
+Bart has left for the day
+Guy is the last to leave the store for the night.
+-----------------
+Day 14
+Guy is here first thing in the morning on day 14.
+
+Burt has arrived on day 14
+
+Burt counts the money.
+Burt sees $222.50 in the register
+
+Gonger is here to deliver cookies.
+Gonger is dropping off 11 packages of cookies.
+Gonger receives $71.50 for his cookies.
+Gonger leaves for the day.
+After buying cookies from Gonger, Burt counts the money in the register again
+Burt sees $151.00 in the register
+
+Burt vacuums the store
+Burt did not break a game!
+
+3 customers have arrived at the store.
+Oh no! The customer was the Cookie Monster in disguise!
+The Cookie Monster ate all 11 packages of cookies, so there are none left!
+While storming away after eating all of the cookies, the Cookie Monster broke 4 game(s)!
+Sadly, there are no cookies available for customer 2 to buy.
+Sadly, there are no cookies available for customer 3 to buy.
+
+Burt ordering new copies of Candyland
+Burt ordered new games for $19.50
+
+Burt is closing the store
+Burt has left for the day
+Guy is the last to leave the store for the night.
+-----------------
+Day 15
+Guy is here first thing in the morning on day 15.
+
+Bart has arrived on day 15
+
+Bart counts the money.
+Bart sees $131.50 in the register
+
+Gonger is here to deliver cookies.
+Gonger is dropping off 12 packages of cookies.
+Gonger receives $78.00 for his cookies.
+Gonger leaves for the day.
+After buying cookies from Gonger, Bart counts the money in the register again
+Bart sees $53.50 in the register
+Bart added $1000 to the register, now at $1053.5
+
+Bart vacuums the store
+Bart did not break a game!
+
+4 customers have arrived at the store.
+Oh no! The customer was the Cookie Monster in disguise!
+The Cookie Monster ate all 12 packages of cookies, so there are none left!
+While storming away after eating all of the cookies, the Cookie Monster broke 6 game(s)!
+Sadly, there are no cookies available for customer 2 to buy.
+Sadly, there are no cookies available for customer 3 to buy.
+Sadly, there are no cookies available for customer 4 to buy.
+
+Bart ordering new copies of Gloomhaven
+Bart ordering new copies of Catan
+Bart ordering new copies of Monopoly
+Bart ordered new games for $234.00
+
+Bart is closing the store
+Bart has left for the day
+Guy is the last to leave the store for the night.
+-----------------
+Day 16
+Guy is here first thing in the morning on day 16.
+
+Bart has arrived on day 16
+
+Bart counts the money.
+Bart sees $819.50 in the register
+
+Gonger is here to deliver cookies.
+Gonger is dropping off 13 packages of cookies.
+Gonger receives $84.50 for his cookies.
+Gonger leaves for the day.
+After buying cookies from Gonger, Bart counts the money in the register again
+Bart sees $735.00 in the register
+
+Bart vacuums the store
+Bart did not break a game!
+
+8 customers have arrived at the store.
+Oh no! The customer was the Cookie Monster in disguise!
+The Cookie Monster ate all 13 packages of cookies, so there are none left!
+While storming away after eating all of the cookies, the Cookie Monster broke 6 game(s)!
+Sadly, there are no cookies available for customer 2 to buy.
+Sadly, there are no cookies available for customer 3 to buy.
+Sadly, there are no cookies available for customer 4 to buy.
+Bart sold Candyland to customer 4 for $13.00
+Sadly, there are no cookies available for customer 5 to buy.
+Sadly, there are no cookies available for customer 6 to buy.
+Sadly, there are no cookies available for customer 7 to buy.
+Sadly, there are no cookies available for customer 8 to buy.
+
+Bart ordering new copies of Life
+Bart ordering new copies of Netrunner
+Bart ordering new copies of Magic
+Bart ordered new games for $100.50
+
+Bart is closing the store
+Bart has left for the day
+Guy is the last to leave the store for the night.
+-----------------
+Day 17
+Guy is here first thing in the morning on day 17.
+
+Ernie has arrived on day 17
+
+Ernie counts the money.
+Ernie sees $647.50 in the register
+
+Gonger is here to deliver cookies.
+Gonger is dropping off 14 packages of cookies.
+Gonger receives $91.00 for his cookies.
+Gonger leaves for the day.
+After buying cookies from Gonger, Ernie counts the money in the register again
+Ernie sees $556.50 in the register
+
+Ernie vacuums the store
+Ernie did not break a game!
+
+4 customers have arrived at the store.
+Oh no! The customer was the Cookie Monster in disguise!
+The Cookie Monster ate all 14 packages of cookies, so there are none left!
+While storming away after eating all of the cookies, the Cookie Monster broke 4 game(s)!
+Sadly, there are no cookies available for customer 2 to buy.
+Ernie sold Connect Four to customer 2 for $10.00
+Sadly, there are no cookies available for customer 3 to buy.
+Sadly, there are no cookies available for customer 4 to buy.
+
+Ernie ordering new copies of Pokémon
+Ernie ordered new games for $36.00
+
+Ernie is closing the store
+Ernie has left for the day
+Guy is the last to leave the store for the night.
+-----------------
+Day 18
+Guy is here first thing in the morning on day 18.
+
+Bart has arrived on day 18
+
+Bart counts the money.
+Bart sees $530.50 in the register
+
+Gonger is here to deliver cookies.
+Gonger is dropping off 15 packages of cookies.
+Gonger receives $97.50 for his cookies.
+Gonger leaves for the day.
+After buying cookies from Gonger, Bart counts the money in the register again
+Bart sees $433.00 in the register
+
+Bart vacuums the store
+Bart did not break a game!
+
+7 customers have arrived at the store.
+Oh no! The customer was the Cookie Monster in disguise!
+The Cookie Monster ate all 15 packages of cookies, so there are none left!
+While storming away after eating all of the cookies, the Cookie Monster broke 5 game(s)!
+Sadly, there are no cookies available for customer 2 to buy.
+Bart sold Pokémon to customer 2 for $24.00
+Sadly, there are no cookies available for customer 3 to buy.
+Sadly, there are no cookies available for customer 4 to buy.
+Sadly, there are no cookies available for customer 5 to buy.
+Sadly, there are no cookies available for customer 6 to buy.
+Sadly, there are no cookies available for customer 7 to buy.
+
+Bart ordering new copies of Catan
+Bart ordering new copies of Clue
+Bart ordered new games for $84.00
+
+Bart is closing the store
+Bart has left for the day
+Guy is the last to leave the store for the night.
+-----------------
+Day 19
+Guy is here first thing in the morning on day 19.
+
+Ernie has arrived on day 19
+
+Ernie counts the money.
+Ernie sees $373.00 in the register
+
+Gonger is here to deliver cookies.
+Gonger is dropping off 16 packages of cookies.
+Gonger receives $104.00 for his cookies.
+Gonger leaves for the day.
+After buying cookies from Gonger, Ernie counts the money in the register again
+Ernie sees $269.00 in the register
+
+Ernie vacuums the store
+Ernie did not break a game!
+
+4 customers have arrived at the store.
+Oh no! The customer was the Cookie Monster in disguise!
+The Cookie Monster ate all 16 packages of cookies, so there are none left!
+While storming away after eating all of the cookies, the Cookie Monster broke 2 game(s)!
+Sadly, there are no cookies available for customer 2 to buy.
+Sadly, there are no cookies available for customer 3 to buy.
+Ernie sold Pokémon to customer 3 for $24.00
+Sadly, there are no cookies available for customer 4 to buy.
+
+Ernie did not order any games
+
+Ernie is closing the store
+Ernie has left for the day
+Guy is the last to leave the store for the night.
+-----------------
+Day 20
+Guy is here first thing in the morning on day 20.
+
+Bart has arrived on day 20
+
+Bart counts the money.
+Bart sees $293.00 in the register
+
+Gonger is here to deliver cookies.
+Gonger is dropping off 17 packages of cookies.
+Gonger receives $110.50 for his cookies.
+Gonger leaves for the day.
+After buying cookies from Gonger, Bart counts the money in the register again
+Bart sees $182.50 in the register
+
+Bart vacuums the store
+Bart did not break a game!
+
+3 customers have arrived at the store.
+Oh no! The customer was the Cookie Monster in disguise!
+The Cookie Monster ate all 17 packages of cookies, so there are none left!
+While storming away after eating all of the cookies, the Cookie Monster broke 1 game(s)!
+Sadly, there are no cookies available for customer 2 to buy.
+Sadly, there are no cookies available for customer 3 to buy.
+
+Bart did not order any games
+
+Bart is closing the store
+Bart has left for the day
+Guy is the last to leave the store for the night.
+-----------------
+Day 21
+Guy is here first thing in the morning on day 21.
+
+Ernie has arrived on day 21
+
+Ernie counts the money.
+Ernie sees $182.50 in the register
+
+Gonger is here to deliver cookies.
+Gonger is dropping off 18 packages of cookies.
+Gonger receives $117.00 for his cookies.
+Gonger leaves for the day.
+After buying cookies from Gonger, Ernie counts the money in the register again
+Ernie sees $65.50 in the register
+Ernie added $1000 to the register, now at $1065.5
+
+Ernie vacuums the store
+Ernie did not break a game!
+
+2 customers have arrived at the store.
+Oh no! The customer was the Cookie Monster in disguise!
+The Cookie Monster ate all 18 packages of cookies, so there are none left!
+While storming away after eating all of the cookies, the Cookie Monster broke 3 game(s)!
+Sadly, there are no cookies available for customer 2 to buy.
+
+Ernie ordering new copies of Mousetrap
+Ernie ordered new games for $18.00
+
+Ernie is closing the store
+Ernie has left for the day
+Guy is the last to leave the store for the night.
+-----------------
+Day 22
+Guy is here first thing in the morning on day 22.
+
+Bart has arrived on day 22
+
+Bart counts the money.
+Bart sees $1,047.50 in the register
+
+Gonger is here to deliver cookies.
+Gonger is dropping off 19 packages of cookies.
+Gonger receives $123.50 for his cookies.
+Gonger leaves for the day.
+After buying cookies from Gonger, Bart counts the money in the register again
+Bart sees $924.00 in the register
+
+Bart vacuums the store
+Bart did not break a game!
+
+3 customers have arrived at the store.
+Oh no! The customer was the Cookie Monster in disguise!
+The Cookie Monster ate all 19 packages of cookies, so there are none left!
+While storming away after eating all of the cookies, the Cookie Monster broke 2 game(s)!
+Sadly, there are no cookies available for customer 2 to buy.
+Sadly, there are no cookies available for customer 3 to buy.
+Bart sold Monopoly to customer 3 for $17.00
+
+Bart did not order any games
+
+Bart is closing the store
+Bart has left for the day
+Guy is the last to leave the store for the night.
+-----------------
+Day 23
+Guy is here first thing in the morning on day 23.
+
+Bart has arrived on day 23
+
+Bart counts the money.
+Bart sees $941.00 in the register
+
+Gonger is here to deliver cookies.
+Gonger is dropping off 20 packages of cookies.
+Gonger receives $130.00 for his cookies.
+Gonger leaves for the day.
+After buying cookies from Gonger, Bart counts the money in the register again
+Bart sees $811.00 in the register
+
+Bart vacuums the store
+Bart did not break a game!
+
+4 customers have arrived at the store.
+Oh no! The customer was the Cookie Monster in disguise!
+The Cookie Monster ate all 20 packages of cookies, so there are none left!
+While storming away after eating all of the cookies, the Cookie Monster broke 6 game(s)!
+Sadly, there are no cookies available for customer 2 to buy.
+Bart sold Catan to customer 2 for $44.00
+Sadly, there are no cookies available for customer 3 to buy.
+Sadly, there are no cookies available for customer 4 to buy.
+
+Bart ordering new copies of Catan
+Bart ordering new copies of Pokémon
+Bart ordering new copies of Netrunner
+Bart ordering new copies of Clue
+Bart ordered new games for $154.50
+
+Bart is closing the store
+Bart has left for the day
+Guy is the last to leave the store for the night.
+-----------------
+Day 24
+Guy is here first thing in the morning on day 24.
+
+Burt has arrived on day 24
+
+Burt counts the money.
+Burt sees $700.50 in the register
+
+Gonger is here to deliver cookies.
+Gonger is dropping off 21 packages of cookies.
+Gonger receives $136.50 for his cookies.
+Gonger leaves for the day.
+After buying cookies from Gonger, Burt counts the money in the register again
+Burt sees $564.00 in the register
+
+Burt vacuums the store
+Burt did not break a game!
+
+2 customers have arrived at the store.
+Oh no! The customer was the Cookie Monster in disguise!
+The Cookie Monster ate all 21 packages of cookies, so there are none left!
+While storming away after eating all of the cookies, the Cookie Monster broke 2 game(s)!
+Sadly, there are no cookies available for customer 2 to buy.
+Burt sold Gloomhaven to customer 2 for $95.00
+
+Burt ordering new copies of Gloomhaven
+Burt ordering new copies of Risk
+Burt ordered new games for $220.50
+
+Burt is closing the store
+Burt has left for the day
+Guy is the last to leave the store for the night.
+-----------------
+Day 25
+Guy is here first thing in the morning on day 25.
+
+Burt has arrived on day 25
+
+Burt counts the money.
+Burt sees $438.50 in the register
+
+Gonger is here to deliver cookies.
+Gonger is dropping off 22 packages of cookies.
+Gonger receives $143.00 for his cookies.
+Gonger leaves for the day.
+After buying cookies from Gonger, Burt counts the money in the register again
+Burt sees $295.50 in the register
+
+Burt vacuums the store
+Burt did not break a game!
+
+2 customers have arrived at the store.
+Oh no! The customer was the Cookie Monster in disguise!
+The Cookie Monster ate all 22 packages of cookies, so there are none left!
+While storming away after eating all of the cookies, the Cookie Monster broke 6 game(s)!
+Sadly, there are no cookies available for customer 2 to buy.
+Burt sold Catan to customer 2 for $44.00
+
+Burt ordering new copies of Monopoly
+Burt ordering new copies of Connect Four
+Burt ordered new games for $40.50
+
+Burt is closing the store
+Burt has left for the day
+Guy is the last to leave the store for the night.
+-----------------
+Day 26
+Guy is here first thing in the morning on day 26.
+
+Ernie has arrived on day 26
+
+Ernie counts the money.
+Ernie sees $299.00 in the register
+
+Gonger is here to deliver cookies.
+Gonger is dropping off 23 packages of cookies.
+Gonger receives $149.50 for his cookies.
+Gonger leaves for the day.
+After buying cookies from Gonger, Ernie counts the money in the register again
+Ernie sees $149.50 in the register
+
+Ernie vacuums the store
+Ernie did not break a game!
+
+4 customers have arrived at the store.
+Oh no! The customer was the Cookie Monster in disguise!
+The Cookie Monster ate all 23 packages of cookies, so there are none left!
+While storming away after eating all of the cookies, the Cookie Monster broke 5 game(s)!
+Sadly, there are no cookies available for customer 2 to buy.
+Ernie sold Gloomhaven to customer 2 for $95.00
+Sadly, there are no cookies available for customer 3 to buy.
+Sadly, there are no cookies available for customer 4 to buy.
+Ernie sold Pokémon to customer 4 for $24.00
+
+Ernie ordering new copies of Candyland
+Ernie ordering new copies of Clue
+Ernie ordered new games for $37.50
+
+Ernie is closing the store
+Ernie has left for the day
+Guy is the last to leave the store for the night.
+-----------------
+Day 27
+Guy is here first thing in the morning on day 27.
+
+Burt has arrived on day 27
+
+Burt counts the money.
+Burt sees $231.00 in the register
+
+Gonger is here to deliver cookies.
+Gonger is dropping off 24 packages of cookies.
+Gonger receives $156.00 for his cookies.
+Gonger leaves for the day.
+After buying cookies from Gonger, Burt counts the money in the register again
+Burt sees $75.00 in the register
+Burt added $1000 to the register, now at $1075.0
+
+Burt vacuums the store
+Burt did not break a game!
+
+1 customers have arrived at the store.
+Oh no! The customer was the Cookie Monster in disguise!
+The Cookie Monster ate all 24 packages of cookies, so there are none left!
+While storming away after eating all of the cookies, the Cookie Monster broke 1 game(s)!
+
+Burt did not order any games
+
+Burt is closing the store
+Burt has left for the day
+Guy is the last to leave the store for the night.
+-----------------
+Day 28
+Guy is here first thing in the morning on day 28.
+
+Ernie has arrived on day 28
+
+Ernie counts the money.
+Ernie sees $1,075.00 in the register
+
+Gonger is here to deliver cookies.
+Gonger is dropping off 25 packages of cookies.
+Gonger receives $162.50 for his cookies.
+Gonger leaves for the day.
+After buying cookies from Gonger, Ernie counts the money in the register again
+Ernie sees $912.50 in the register
+
+Ernie vacuums the store
+Ernie did not break a game!
+
+5 customers have arrived at the store.
+Oh no! The customer was the Cookie Monster in disguise!
+The Cookie Monster ate all 25 packages of cookies, so there are none left!
+While storming away after eating all of the cookies, the Cookie Monster broke 1 game(s)!
+Sadly, there are no cookies available for customer 2 to buy.
+Sadly, there are no cookies available for customer 3 to buy.
+Sadly, there are no cookies available for customer 4 to buy.
+Ernie sold Candyland to customer 4 for $13.00
+Sadly, there are no cookies available for customer 5 to buy.
+
+Ernie did not order any games
+
+Ernie is closing the store
+Ernie has left for the day
+Guy is the last to leave the store for the night.
+-----------------
+Day 29
+Guy is here first thing in the morning on day 29.
+
+Bart has arrived on day 29
+
+Bart counts the money.
+Bart sees $925.50 in the register
+
+Gonger is here to deliver cookies.
+Gonger is dropping off 26 packages of cookies.
+Gonger receives $169.00 for his cookies.
+Gonger leaves for the day.
+After buying cookies from Gonger, Bart counts the money in the register again
+Bart sees $756.50 in the register
+
+Bart vacuums the store
+Bart did not break a game!
+
+1 customers have arrived at the store.
+Oh no! The customer was the Cookie Monster in disguise!
+The Cookie Monster ate all 26 packages of cookies, so there are none left!
+While storming away after eating all of the cookies, the Cookie Monster broke 6 game(s)!
+
+Bart ordering new copies of Monopoly
+Bart ordering new copies of Gloomhaven
+Bart ordering new copies of Pokémon
+Bart ordering new copies of Catan
+Bart ordering new copies of Mousetrap
+Bart ordered new games for $288.00
+
+Bart is closing the store
+Bart has left for the day
+Guy is the last to leave the store for the night.
+-----------------
+Day 30
+Guy is here first thing in the morning on day 30.
+
+Bart has arrived on day 30
+
+Bart counts the money.
+Bart sees $468.50 in the register
+
+Gonger is here to deliver cookies.
+Gonger is dropping off 27 packages of cookies.
+Gonger receives $175.50 for his cookies.
+Gonger leaves for the day.
+After buying cookies from Gonger, Bart counts the money in the register again
+Bart sees $293.00 in the register
+
+Bart vacuums the store
+Bart did not break a game!
+
+2 customers have arrived at the store.
+Oh no! The customer was the Cookie Monster in disguise!
+The Cookie Monster ate all 27 packages of cookies, so there are none left!
+While storming away after eating all of the cookies, the Cookie Monster broke 6 game(s)!
+Sadly, there are no cookies available for customer 2 to buy.
+
+Bart ordering new copies of Mousetrap
+Bart ordered new games for $18.00
+
+Bart is closing the store
+Bart has left for the day
+Guy is the last to leave the store for the night.
+------------------------------------------------------------------------------------------------
+===Store Summary Report===
+Game sales:
+Game: Gloomhaven		 Inventory: 2		 Sold: 3		 Total Sales: $285.00
+Game: Monopoly		 Inventory: 3		 Sold: 1		 Total Sales: $17.00
+Game: Pokémon		 Inventory: 3		 Sold: 4		 Total Sales: $96.00
+Game: Catan		 Inventory: 3		 Sold: 2		 Total Sales: $88.00
+Game: Risk		 Inventory: 2		 Sold: 1		 Total Sales: $52.00
+Game: Netrunner		 Inventory: 2		 Sold: 0		 Total Sales: $0.00
+Game: Connect Four		 Inventory: 3		 Sold: 1		 Total Sales: $10.00
+Game: Mousetrap		 Inventory: 0		 Sold: 0		 Total Sales: $0.00
+Game: Candyland		 Inventory: 2		 Sold: 3		 Total Sales: $39.00
+Game: Clue		 Inventory: 2		 Sold: 0		 Total Sales: $0.00
+Game: Life		 Inventory: 1		 Sold: 1		 Total Sales: $13.00
+Game: Magic		 Inventory: 2		 Sold: 0		 Total Sales: $0.00
+Broken games:
+Game: Risk		 Inventory: 12
+Game: Candyland		 Inventory: 10
+Game: Netrunner		 Inventory: 10
+Game: Magic		 Inventory: 7
+Game: Monopoly		 Inventory: 11
+Game: Pokémon		 Inventory: 11
+Game: Catan		 Inventory: 13
+Game: Mousetrap		 Inventory: 15
+Game: Clue		 Inventory: 13
+Game: Gloomhaven		 Inventory: 7
+Game: Life		 Inventory: 7
+Game: Connect Four		 Inventory: 2
+Total number of packages of cookies purchased: 382
+Amount of money paid out to Gonger for his cookies: $2,483.00
+Number of cookie packages stolen by the Cookie Monster: 27
+Final register funds: $275.00
+Number of times money was added to register: $4,000.00 (4 adds)
