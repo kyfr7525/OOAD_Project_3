@@ -133,7 +133,10 @@ public class Store {
             }
         }
 
+        announcer.makeAnnouncement("Total number of packages of cookies purchased: " + baker.totalCookiesSold);
+        announcer.makeAnnouncement("Amount of money paid out to Gonger for his cookies: " + Utility.asDollar(baker.totalCookieMoney));
         announcer.makeAnnouncement("Number of cookie packages stolen by the Cookie Monster: " + cookieMonster.packsOfCookiesStolen);
+
 
         // final register count
         announcer.makeAnnouncement("Final register funds: "+Utility.asDollar(registerCash));

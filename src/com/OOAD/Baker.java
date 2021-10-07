@@ -28,6 +28,7 @@ public class Baker extends ObservableEmployee
     int numPacksOfCookies = 1;
     double cookiePrice = Utility.rndFromRange(5,15); // determine rand price to sell a pack of cookies to customers between $5 and $15
     double totalCookieMoney;
+    int totalCookiesSold;
 
     public Baker(String name, Announcer announcer)
     {
@@ -45,6 +46,7 @@ public class Baker extends ObservableEmployee
 
         store.registerCash -= (numPacksOfCookies * (cookiePrice /2));
         store.numCookiesAvailable += numPacksOfCookies;
+        totalCookiesSold += numPacksOfCookies;
 
         announcer.makeAnnouncement("Gonger is here to deliver cookies.");
         announcer.makeAnnouncement("Gonger is dropping off " + numPacksOfCookies + " packages of cookies.");
